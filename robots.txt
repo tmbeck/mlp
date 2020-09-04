@@ -1,1 +1,1 @@
-Sitemap: https://blog.tbeck.io/mlp/sitemap.xml
+Sitemap: https://blog.tbeck.io/sitemap.xml
