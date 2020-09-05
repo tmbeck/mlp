@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>fastai v4: Lesson 1 | ML Development Blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="fastai v4: Lesson 1" />
+<meta name="author" content="<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes from Lesson 1 of fastai v4" />
+<meta property="og:description" content="Notes from Lesson 1 of fastai v4" />
+<link rel="canonical" href="https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1.html" />
+<meta property="og:url" content="https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1.html" />
+<meta property="og:site_name" content="ML Development Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-05T00:00:00-05:00" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>"},"headline":"fastai v4: Lesson 1","description":"Notes from Lesson 1 of fastai v4","datePublished":"2020-09-05T00:00:00-05:00","dateModified":"2020-09-05T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1.html"},"url":"https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://blog.tbeck.io/feed.xml" title="ML Development Blog" /><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"><link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://blog.tbeck.io/feed.xml" title="ML Development Blog" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">ML Development Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About Me</a><a class="page-link" href="/search/">Search</a><a class="page-link" href="/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">fastai v4: Lesson 1</h1><p class="page-description">Notes from Lesson 1 of fastai v4</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-09-05T00:00:00-05:00" itemprop="datePublished">
+        Sep 5, 2020
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name"><a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a></span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/categories/#education">education</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/categories/#fastai">fastai</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#lesson-1">Lesson 1</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#links">Links</a></li>
+<li class="toc-entry toc-h3"><a href="#notes">Notes</a></li>
+<li class="toc-entry toc-h2"><a href="#homework">Homework</a></li>
+</ul>
+</li>
+</ul><h1 id="lesson-1">
+<a class="anchor" href="#lesson-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lesson 1</h1>
+
+<p>Notes from fastai lesson 1.</p>
+
+<h3 id="links">
+<a class="anchor" href="#links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Links</h3>
+
+<ul>
+  <li><a href="https://course.fast.ai/videos/?lesson=1">Lesson 1 Video</a></li>
+  <li><a href="https://forums.fast.ai/">fastai Forum</a></li>
+</ul>
+
+<h3 id="notes">
+<a class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h3>
+
+<ol>
+  <li>Discussed what’s needed to take this course (not much!).</li>
+  <li>Discussed history of AI and how deep neural networks came to be. Mostly news to me, 1/10.</li>
+  <li>Introduced Jupyter, ipywidgets, REPL. Mostly seen this before, 7/10.</li>
+  <li>Introduced ML (repeat, but still new, 4/10)
+    <ul>
+      <li>take an input, process it, get an output.</li>
+      <li>Samuel’s terminology: take inputs &amp; weights into a model, generate results</li>
+      <li>Add feedback: measure performance of the results (a metric), then change weights. Rinse &amp; repeat.</li>
+      <li>Different weights to the model allows it to do a different task</li>
+      <li>Universal approximation theorem: theory that a neural network could solve any problem to any level of accuracy.</li>
+      <li>Need a way to update weights - SGD: stochastic gradient descent - to update the weights</li>
+    </ul>
+  </li>
+  <li>Jargon</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Keyword</th>
+      <th style="text-align: center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Architecture</td>
+      <td style="text-align: center">The “program” we are running. Often synonymous with model, but represents its functional form..</td>
+    </tr>
+    <tr>
+      <td>Parameters</td>
+      <td style="text-align: center">The “weights” into the “program”</td>
+    </tr>
+    <tr>
+      <td>Predictions</td>
+      <td style="text-align: center">The output of our architecture, computed from independent variables which does not include labels</td>
+    </tr>
+    <tr>
+      <td>Labels</td>
+      <td style="text-align: center">The targets or dependent variables, assumed to be true for a given prediction.</td>
+    </tr>
+    <tr>
+      <td>Loss</td>
+      <td style="text-align: center">A metric of performance we measure our model by: how well did our prediction (computed from independent variables) match our labels (our dependent variables)?</td>
+    </tr>
+    <tr>
+      <td>Model</td>
+      <td style="text-align: center">The combination of the parameters and architecture that can act on inputs to generate a prediction.</td>
+    </tr>
+    <tr>
+      <td>Inputs</td>
+      <td style="text-align: center">The data on which the model acts to generate a prediction. No inputs (data) == No predictions!</td>
+    </tr>
+    <tr>
+      <td>Action</td>
+      <td style="text-align: center">The decision made from reasoning about a given prediction.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>From the loss, we can /update/ the weight for a given input, thus allowing our system to learn.</p>
+
+<ol>
+  <li>ML Limitations</li>
+</ol>
+
+<ul>
+  <li>A model can only be created from data</li>
+  <li>A model can only learn from patterns in the inputs</li>
+  <li>A model can only make a prediction - actions happen externally</li>
+</ul>
+
+<p>Labeled data is key and often missing - good part, bad part, etc.</p>
+
+<p>It is important to note that a feedback loop can be created, resulting in a causal relationship where none existed before. Jeremy gave an example in <a href="https://youtu.be/_QUEXsHfsA0?t=3677">lesson 1</a>. This goes to ethics along ML and understanding inherent biases in your training dataset that you may not be aware of.</p>
+
+<ol>
+  <li>The fastai notebook</li>
+</ol>
+
+<p>Intro to fastai. Discuss REPL, data sets, etc.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastai.vision.all</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learner</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet34</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Here <code class="highlighter-rouge">cnn_learner</code> is a function that generates our model, <code class="highlighter-rouge">dls</code> is our dataset, <code class="highlighter-rouge">resnet34</code> is our architecture, and <code class="highlighter-rouge">error_rate</code> is a loss function for feedback.</p>
+
+<p><code class="highlighter-rouge">resnet34</code> is a predefined neural network trained on images that is free to use. <code class="highlighter-rouge">34</code> indicates it has 34 layers, more layers requires more GPU memory.</p>
+
+<p><code class="highlighter-rouge">error_rate</code> is computed on data not used in training, also known as a holdout set or validation set, to help avoid overfitting. Might need to increase the size of the holdout set to avoid overfitting. The ambiguiuty is actually important in model building, otherwise the model will only know how to recognize images it has seen before.</p>
+
+<ol>
+  <li>Other uses</li>
+</ol>
+
+<p>segmentation: figuring out what every pixel in an image is (what label it corresponds to)</p>
+
+<p>For a PWA, labels might be</p>
+
+<ul>
+  <li>trace, screw, via, component</li>
+</ul>
+
+<p>A larger training set might allow</p>
+
+<ul>
+  <li>trace, via, capacitor, resistor, inductor, transistor, integrated circuit, etc.</li>
+</ul>
+
+<p>Project idea: create an architecture for use in image segmentation that is trained on images of various PWAs (raspberry Pis, motherboards, etc.) to recognize features.</p>
+
+<p>tabular data: fitting a model to predict salary based on a variety of parameters, predicting ratings a user might give a movie they haven’t seen based on previous ratings they have given (known as collaboration, used in recommendation engines)</p>
+
+<h2 id="homework">
+<a class="anchor" href="#homework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homework</h2>
+
+<p>Do the questionaire, run the notebooks, etc.</p>
+
+  </div><a class="u-url" href="/education/fastai/2020/09/05/lesson-1.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Blogging my experiences learning ML via the fast.ai courses.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
