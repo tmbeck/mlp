@@ -1,11 +1,11 @@
 ---
-keywords: fastai
+keywords: fastai, computing
 description: "Review & notes from the first two lessons of fastai v4."
 title: "The story so far"
-author: "<a href='https://www.linkedin.com/tmbeck'>Tim Beck</a>"
+author: "<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>"
 toc: true
 comments: false
-categories: [education, fastai]
+categories: [linux, education, fastai]
 badges: true
 layout: post
 ---
@@ -18,6 +18,8 @@ At the time, the course v3 was in "production". Since then, v4 has been released
 ## Setup
 
 Being the hands on engineer that I am, I decided to build my own system for machine learning from spare parts around the house. I already have experience deploying jupyter for use by development teams and I am no stranger to Linux. The fast.ai Getting Started guide originally suggested using managed services such as Google Cloud or AWS, but it was straightforward enough to get something working that I've documented it below.
+
+Note that this isn't recommended by Jeremy in the video lesson, but I decided to do it to understand what is going on behind the scenes (and why pay AWS when I have the hardware and free solar energy).
 
 ### Hardware
 
@@ -187,6 +189,3 @@ Now that CUDA is working and we have the code, I prefer fire up my `jupyter note
 Now I just run `screen`, activate conda with `conda activate fastai`, and finally start jupyter with `jupyter notebook`. For tricks on using screen see [this quickreference](https://gist.github.com/jctosta/af918e1618682638aa82)
 
 If you prefer to use jupyter lab, you'll need to `conda install jupyterlab` and run `jupyter lab` instead.
-
-# Lesson 1
-
