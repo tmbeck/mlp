@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://blog.tbeck.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.tbeck.io/" rel="alternate" type="text/html" /><updated>2020-09-06T00:59:10-05:00</updated><id>https://blog.tbeck.io/feed.xml</id><title type="html">ML Development Blog</title><subtitle>Blogging my experiences learning ML via the fast.ai courses.</subtitle><entry><title type="html">fastai v4: Lesson 1</title><link href="https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1.html" rel="alternate" type="text/html" title="fastai v4: Lesson 1" /><published>2020-09-05T00:00:00-05:00</published><updated>2020-09-05T00:00:00-05:00</updated><id>https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1</id><content type="html" xml:base="https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1.html">&lt;h1 id=&quot;lesson-1&quot;&gt;Lesson 1&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://blog.tbeck.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.tbeck.io/" rel="alternate" type="text/html" /><updated>2020-09-06T15:59:44-05:00</updated><id>https://blog.tbeck.io/feed.xml</id><title type="html">ML Development Blog</title><subtitle>Blogging my experiences learning ML via the fast.ai courses.</subtitle><entry><title type="html">fastai v4: Lesson 1</title><link href="https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1.html" rel="alternate" type="text/html" title="fastai v4: Lesson 1" /><published>2020-09-05T00:00:00-05:00</published><updated>2020-09-05T00:00:00-05:00</updated><id>https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1</id><content type="html" xml:base="https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1.html">&lt;h1 id=&quot;lesson-1&quot;&gt;Lesson 1&lt;/h1&gt;
 
 &lt;p&gt;Notes from fastai lesson 1.&lt;/p&gt;
 
@@ -42,7 +42,7 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Parameters&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The “weights” into the “program”&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;The “weights” into the “program” that alter its performance&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Predictions&lt;/td&gt;
@@ -68,8 +68,30 @@
       &lt;td&gt;Action&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;The decision made from reasoning about a given prediction.&lt;/td&gt;
     &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Transfer learning&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Using a pre-trained model for a task other than what it was originally intended for (via training)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fine Tuning&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;A transfer learning technique that updates the parameters of a pretrained model by training for additional epochs using a different task from that used for pretraining. This is also known as fitting.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;head&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;The last and newly added layer of a model which trains it on a particular data set. This replaces the previous layer when &lt;code class=&quot;highlighter-rouge&quot;&gt;cnn_learner&lt;/code&gt; is used.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;epoch&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;One complete training of the model on the complete dataset&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Over fitting&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;When a model learns the unique characteristics of a dataset rather than a generalization, limiting its ability to do inference on new data.&lt;/td&gt;
+    &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;p&gt;Howard, Jeremy. Deep Learning for Coders with fastai and PyTorch . O’Reilly Media. Kindle Edition.&lt;/p&gt;
 
 &lt;p&gt;From the loss, we can /update/ the weight for a given input, thus allowing our system to learn.&lt;/p&gt;
 
@@ -129,7 +151,207 @@
 
 &lt;h2 id=&quot;homework&quot;&gt;Homework&lt;/h2&gt;
 
-&lt;p&gt;Do the questionaire, run the notebooks, etc.&lt;/p&gt;</content><author><name>&lt;a href='https://www.linkedin.com/in/tmbeck'&gt;Tim Beck&lt;/a&gt;</name></author><summary type="html">Lesson 1</summary></entry><entry><title type="html">Wavelets in Jupyter Notebooks</title><link href="https://blog.tbeck.io/wavelets/jupyter/2020/09/05/pywavelets.html" rel="alternate" type="text/html" title="Wavelets in Jupyter Notebooks" /><published>2020-09-05T00:00:00-05:00</published><updated>2020-09-05T00:00:00-05:00</updated><id>https://blog.tbeck.io/wavelets/jupyter/2020/09/05/pywavelets</id><content type="html" xml:base="https://blog.tbeck.io/wavelets/jupyter/2020/09/05/pywavelets.html">&lt;!--
+&lt;p&gt;Do the questionaire, run the notebooks, etc.&lt;/p&gt;
+
+&lt;h3 id=&quot;questionnaire&quot;&gt;Questionnaire&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(If you’re not sure of the answer to a question, try watching the next lesson and then coming back to this one, or read the first chapter of the book.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do you need these for deep learning?&lt;/p&gt;
+
+    &lt;p&gt;Lots of math T / F&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;False: Much of the math is taken for you thanks to libraries such as numpy.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Lots of data T / F&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;False: Relatively small data sets can train world class models - no need for “Big Data”!
+ Lots of expensive computers T / F&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;False: You can use consumer grade hardware if you have it or take advantage of Google Cloud, AWS, Colab, etc.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;A PhD T / F&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;False: You will need some knowledge of programming and understanding of your data set, but a PhD is not needed.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Name five areas where deep learning is now the best in the world.&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;NLP (natural language processing)&lt;/li&gt;
+      &lt;li&gt;Computer Vision&lt;/li&gt;
+      &lt;li&gt;Medicine&lt;/li&gt;
+      &lt;li&gt;Biology&lt;/li&gt;
+      &lt;li&gt;Image generalization&lt;/li&gt;
+      &lt;li&gt;Forecasting&lt;/li&gt;
+      &lt;li&gt;Robotics (grip strength, movement)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What was the name of the first device that was based on the principle of the artificial neuron?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The Mark I Perceptron (sounds like something from Fallout!)&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Based on the book of the same name, what are the requirements for parallel distributed processing (PDP)?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;A set of processing units&lt;/li&gt;
+      &lt;li&gt;A state of activation&lt;/li&gt;
+      &lt;li&gt;An output function for each unit&lt;/li&gt;
+      &lt;li&gt;A pattern of connectivity between units&lt;/li&gt;
+      &lt;li&gt;A propagation rule for patterns to pass between units via a pattern of connectivity&lt;/li&gt;
+      &lt;li&gt;An activation rule that controls the output for a given input and current state of a unit&lt;/li&gt;
+      &lt;li&gt;A learning rule that modifies patterns of connectivity&lt;/li&gt;
+      &lt;li&gt;An environment to operate in (often overlooked)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What were the two theoretical misunderstandings that held back the field of neural networks?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;That because a single layer of neurons could not simulate an XOR, neural networks were a dead end&lt;/li&gt;
+      &lt;li&gt;DNN would be too big and too slow to be useful&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is a GPU?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;A Graphcis Processing Unit, designed for massively parallel execution of floating point vectors.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open a notebook and execute a cell containing: 1+1. What happens?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;It computes and displays the output (2)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Follow through each cell of the stripped version of the notebook for this chapter. Before executing each cell, guess what will happen.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Done in the notebook…&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Complete the Jupyter Notebook online appendix.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Done&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Why is it hard to use a traditional computer program to recognize images in a photo?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Requires a pixel by pixel search of the image, or something akin to a kernel to review pixel groupings, with significant comparison and cyclic complexity. Here, we tell the computer what to think, when to think it - we are explicit. This is converse to machine learning, which learns the patterns in the data and uses those patterns to recognize images in a photo.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What did Samuel mean by “weight assignment”?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Weight assignments are variables used in a model to alter the performance of the program (model). The weight assignments must have an automatic means to be updated, so as to provide feedback to improve the performance of the model for its respective purpose.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What term do we normally use in deep learning for what Samuel called “weights”?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;We call them “parameters”.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Draw a picture that summarizes Samuel’s view of a machine learning model.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* results = model(inputs, weights)
+* performance = results - actuals
+* weights = performance(weights)
+
+Essentially, the inputs of a model are used to generate results. Those results have a certain performance, which is improved by modifying the weights and repeating the operation.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Why is it hard to understand why a deep learning model makes a particular prediction?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Because of the complexity of the “black box” - it would be necessary to instrument each layer of a neural network in order to understand why. In other words, the why is the entirety of the state machine, although some parts of the state machine may be better than others.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is the name of the theorem that shows that a neural network can solve any mathematical problem to any level of accuracy?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Universal approximation theorem (reminds me of using taylor series expansion to approximate various mathematical functions)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What do you need in order to train a model?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;You need a dataset and an architecture (a pretrained model)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;How could a feedback loop impact the rollout of a predictive policing model?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Inherent bias in the dataset could lead to increased policing of a particular population representative of the bias, resulting in additional policing, enhancing the existing dataset bias.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do we always have to use 224×224-pixel images with the cat recognition model?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;No, but larger images or sizes may impact performance of the GPU (meaning it will take longer for the model to learn)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is the difference between classification and regression?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Classification predicts a label based on a given input&lt;/li&gt;
+      &lt;li&gt;Regression predicts a future value based on previous values&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is a validation set? What is a test set? Why do we need them?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;A validation or hold out set is a subset of a dataset that we do not train the model with, but we use to grade the model’s performance.&lt;/li&gt;
+      &lt;li&gt;A test set is a dataset we do not show even ourselves, to avoid introducing bias through EDA and model training.&lt;/li&gt;
+      &lt;li&gt;We need these to avoid overfitting or introducing bias into our models&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What will fastai do if you don’t provide a validation set?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;It will automatically use a subset of your data as the validation set.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>&lt;a href='https://www.linkedin.com/in/tmbeck'&gt;Tim Beck&lt;/a&gt;</name></author><summary type="html">Lesson 1</summary></entry><entry><title type="html">Wavelets in Jupyter Notebooks</title><link href="https://blog.tbeck.io/wavelets/jupyter/2020/09/05/pywavelets.html" rel="alternate" type="text/html" title="Wavelets in Jupyter Notebooks" /><published>2020-09-05T00:00:00-05:00</published><updated>2020-09-05T00:00:00-05:00</updated><id>https://blog.tbeck.io/wavelets/jupyter/2020/09/05/pywavelets</id><content type="html" xml:base="https://blog.tbeck.io/wavelets/jupyter/2020/09/05/pywavelets.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -700,72 +922,72 @@
 &lt;p&gt;Finally we can create a new conda environment, install the necessary packages, and verify pytorch can see and use the GPU.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Create a fastai conda environment with python 3.8&lt;/li&gt;
-&lt;/ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a fastai conda environment with python 3.8&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda create &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; fastai &lt;span class=&quot;nv&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3.8
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda activate fastai
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda create &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; fastai &lt;span class=&quot;nv&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3.8
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda activate fastai
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install fastai in conda, as per their &lt;a href=&quot;https://docs.fast.ai/&quot;&gt;Install Instructions&lt;/a&gt;. It might take a while for &lt;code class=&quot;highlighter-rouge&quot;&gt;conda&lt;/code&gt; to determine which channel to get the packages from.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Install fastai in conda, as per their &lt;a href=&quot;https://docs.fast.ai/&quot;&gt;Install Instructions&lt;/a&gt;. It might take a while for &lt;code class=&quot;highlighter-rouge&quot;&gt;conda&lt;/code&gt; to determine which channel to get the packages from.&lt;/li&gt;
-&lt;/ol&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; fastai &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; pytorch &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; anaconda fastai gh anaconda
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; fastai &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; pytorch &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; anaconda fastai gh anaconda &lt;span class=&quot;nv&quot;&gt;cudatoolkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10.2
+ Collecting package metadata &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;current_repodata.json&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: &lt;span class=&quot;k&quot;&gt;done
+ &lt;/span&gt;Solving environment: &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; fastai &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; pytorch &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; anaconda fastai gh anaconda
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; fastai &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; pytorch &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; anaconda fastai gh anaconda &lt;span class=&quot;nv&quot;&gt;cudatoolkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10.2
-Collecting package metadata &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;current_repodata.json&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: &lt;span class=&quot;k&quot;&gt;done
-&lt;/span&gt;Solving environment: &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+ &lt;span class=&quot;c&quot;&gt;## Package Plan ##&lt;/span&gt;
 
-&lt;span class=&quot;c&quot;&gt;## Package Plan ##&lt;/span&gt;
+   environment location: /home/tbeck/anaconda3
 
-  environment location: /home/tbeck/anaconda3
-
-  added / updated specs:
-    - anaconda
-    - &lt;span class=&quot;nv&quot;&gt;cudatoolkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10.2
-    - fastai
-    - gh
+   added / updated specs:
+     - anaconda
+     - &lt;span class=&quot;nv&quot;&gt;cudatoolkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10.2
+     - fastai
+     - gh
 
 
-The following packages will be downloaded:
+ The following packages will be downloaded:
 
-    package                    |            build
-    &lt;span class=&quot;nt&quot;&gt;---------------------------&lt;/span&gt;|-----------------
-    ca-certificates-2020.7.22  |                0         132 KB  anaconda
-    certifi-2020.6.20          |           py37_0         159 KB  anaconda
-    conda-4.8.4                |           py37_0         3.0 MB  anaconda
-    cudatoolkit-10.2.89        |       hfd86e86_1       540.0 MB  anaconda
-    gh-0.11.1                  |                0         5.5 MB  fastai
-    openssl-1.1.1g             |       h7b6447c_0         3.8 MB  anaconda
-    &lt;span class=&quot;nt&quot;&gt;------------------------------------------------------------&lt;/span&gt;
+     package                    |            build
+     &lt;span class=&quot;nt&quot;&gt;---------------------------&lt;/span&gt;|-----------------
+     ca-certificates-2020.7.22  |                0         132 KB  anaconda
+     certifi-2020.6.20          |           py37_0         159 KB  anaconda
+     conda-4.8.4                |           py37_0         3.0 MB  anaconda
+     cudatoolkit-10.2.89        |       hfd86e86_1       540.0 MB  anaconda
+     gh-0.11.1                  |                0         5.5 MB  fastai
+     openssl-1.1.1g             |       h7b6447c_0         3.8 MB  anaconda
+     &lt;span class=&quot;nt&quot;&gt;------------------------------------------------------------&lt;/span&gt;
                                            Total:       552.5 MB
 
-The following NEW packages will be INSTALLED:
+ The following NEW packages will be INSTALLED:
 
-  gh                 fastai/linux-64::gh-0.11.1-0
+   gh                 fastai/linux-64::gh-0.11.1-0
 
-The following packages will be SUPERSEDED by a higher-priority channel:
+ The following packages will be SUPERSEDED by a higher-priority channel:
 
-  ca-certificates                                 pkgs/main &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; anaconda
-  certifi                                         pkgs/main &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; anaconda
-  conda                                           pkgs/main &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; anaconda
-  cudatoolkit                                     pkgs/main &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; anaconda
-  openssl                                         pkgs/main &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; anaconda
+   ca-certificates                                 pkgs/main &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; anaconda
+   certifi                                         pkgs/main &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; anaconda
+   conda                                           pkgs/main &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; anaconda
+   cudatoolkit                                     pkgs/main &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; anaconda
+   openssl                                         pkgs/main &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; anaconda
 
 
-Proceed &lt;span class=&quot;o&quot;&gt;([&lt;/span&gt;y]/n&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;?
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+ Proceed &lt;span class=&quot;o&quot;&gt;([&lt;/span&gt;y]/n&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Once installed, you can quickly test that your GPU is seen and used from the command line like so:&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Once installed, you can quickly test that your GPU is seen and used from the command line like so:&lt;/li&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'import torch; print(torch.cuda.get_device_name())'&lt;/span&gt;
+ GeForce GTX 970
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'import torch; print(torch.rand(2,3).cuda())'&lt;/span&gt;
+ tensor&lt;span class=&quot;o&quot;&gt;([[&lt;/span&gt;0.3352, 0.0835, 0.5349],
+         &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0.3712, 0.2851, 0.8767]], &lt;span class=&quot;nv&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cuda:0'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'import torch; print(torch.cuda.get_device_name())'&lt;/span&gt;
-GeForce GTX 970
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'import torch; print(torch.rand(2,3).cuda())'&lt;/span&gt;
-tensor&lt;span class=&quot;o&quot;&gt;([[&lt;/span&gt;0.3352, 0.0835, 0.5349],
-        &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0.3712, 0.2851, 0.8767]], &lt;span class=&quot;nv&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cuda:0'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;If you see your expected video card and a &lt;code class=&quot;highlighter-rouge&quot;&gt;tensor&lt;/code&gt; returned, you’re all set. If you have multiple GPU’s installed, you may need to specify which one to use. Check out &lt;a href=&quot;https://stackoverflow.com/questions/37893755/tensorflow-set-cuda-visible-devices-within-jupyter&quot;&gt;this stack overflow article&lt;/a&gt; on how to set the appropriate environment variables for the command line and for jupyter to work.&lt;/p&gt;
 
@@ -773,42 +995,38 @@ tensor&lt;span class=&quot;o&quot;&gt;([[&lt;/span&gt;0.3352, 0.0835, 0.5349],
 
 &lt;p&gt;I’ve noticed that if you update conda using &lt;code class=&quot;highlighter-rouge&quot;&gt;conda update --all&lt;/code&gt;, it will try to pull in the latest version of &lt;code class=&quot;highlighter-rouge&quot;&gt;cudatoolkit&lt;/code&gt;, which as of this writing is &lt;code class=&quot;highlighter-rouge&quot;&gt;cudatoolkit-11.0.221-h6bb024c_0&lt;/code&gt;. This is safe to do, but you will need to downgrade back to &lt;code class=&quot;highlighter-rouge&quot;&gt;cudatoolkit-10.2&lt;/code&gt;. Below is an example.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Upgrading conda (only showing cudatoolkit for visbility - your output will differ)
-```bash
-$ conda update –all
-…
-The following packages will be UPDATED:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&quot;upgrading-conda-only-showing-cudatoolkit-for-visbility---your-output-will-differ&quot;&gt;Upgrading conda (only showing cudatoolkit for visbility - your output will differ)&lt;/h4&gt;
 
-&lt;p&gt;cudatoolkit        anaconda::cudatoolkit-10.2.89-hfd86e8~ –&amp;gt; pkgs/main::cudatoolkit-11.0.221-h6bb024c_0&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda update &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
+...
+The following packages will be UPDATED:
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;m&quot;&gt;2.&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Downgrading&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cudatoolkit&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;```&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bash&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;conda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pytorch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torchvision&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cudatoolkit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10.2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pytorch&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;added&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;updated&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;specs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cudatoolkit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10.2&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;The&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;following&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packages&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;downloaded&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;package&lt;/span&gt;                    &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;---------------------------|-----------------&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cudatoolkit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10.2.89&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;hfd86e86_1&lt;/span&gt;       &lt;span class=&quot;m&quot;&gt;365.1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MB&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;------------------------------------------------------------&lt;/span&gt;
-                                           &lt;span class=&quot;n&quot;&gt;Total&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;       &lt;span class=&quot;m&quot;&gt;365.1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MB&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;The&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;following&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packages&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DOWNGRADED&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;cudatoolkit&lt;/span&gt;                           &lt;span class=&quot;m&quot;&gt;11.0.221&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h6bb024c_0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;--&amp;gt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10.2.89&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hfd86e86_1&lt;/span&gt;
+  cudatoolkit        anaconda::cudatoolkit-10.2.89-hfd86e8~ &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; pkgs/main::cudatoolkit-11.0.221-h6bb024c_0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Troubleshooting&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&quot;downgrading-cudatoolkit&quot;&gt;Downgrading cudatoolkit&lt;/h4&gt;
 
-&lt;p&gt;Note that trying to install &lt;code class=&quot;highlighter-rouge&quot;&gt;cudatoolkit=10.2&lt;/code&gt; alone might result in the error below, so be sure that &lt;code class=&quot;highlighter-rouge&quot;&gt;pytorch&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;torchvision&lt;/code&gt; are included as above.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;pytorch torchvision &lt;span class=&quot;nv&quot;&gt;cudatoolkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10.2 &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; pytorch
+...
+  added / updated specs:
+    - &lt;span class=&quot;nv&quot;&gt;cudatoolkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10.2
+
+The following packages will be downloaded:
+
+    package                    |            build
+    &lt;span class=&quot;nt&quot;&gt;---------------------------&lt;/span&gt;|-----------------
+    cudatoolkit-10.2.89        |       hfd86e86_1       365.1 MB
+    &lt;span class=&quot;nt&quot;&gt;------------------------------------------------------------&lt;/span&gt;
+                                           Total:       365.1 MB
+
+The following packages will be DOWNGRADED:
+
+  cudatoolkit                           11.0.221-h6bb024c_0 &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; 10.2.89-hfd86e86_1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;troubleshooting&quot;&gt;Troubleshooting&lt;/h4&gt;
+
+&lt;p&gt;If you get the below trying to use &lt;code class=&quot;highlighter-rouge&quot;&gt;torch&lt;/code&gt; then cuda isn’t working as expected.&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'import torch; print(torch.rand(2,3).cuda())'&lt;/span&gt;
 Traceback &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;most recent call last&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
@@ -819,6 +1037,8 @@ Traceback &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;most recent call last&lt
     raise AssertionError&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Torch not compiled with CUDA enabled&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 AssertionError: Torch not compiled with CUDA enabled
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that trying to install &lt;code class=&quot;highlighter-rouge&quot;&gt;cudatoolkit=10.2&lt;/code&gt; alone might result in this error, so be sure that &lt;code class=&quot;highlighter-rouge&quot;&gt;pytorch&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;torchvision&lt;/code&gt; are included when specifying &lt;code class=&quot;highlighter-rouge&quot;&gt;cudatoolkit=10.2&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;preparing-for-class&quot;&gt;Preparing for class&lt;/h3&gt;
 

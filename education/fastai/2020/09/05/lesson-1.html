@@ -64,7 +64,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About Me</a><a class="page-link" href="/search/">Search</a><a class="page-link" href="/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/about/">About Me</a><a class="page-link" href="/links/">Useful Links</a><a class="page-link" href="/search/">Search</a><a class="page-link" href="/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      9 min read
     
 </span></p>
 
@@ -104,7 +104,11 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h3"><a href="#links">Links</a></li>
 <li class="toc-entry toc-h3"><a href="#notes">Notes</a></li>
-<li class="toc-entry toc-h2"><a href="#homework">Homework</a></li>
+<li class="toc-entry toc-h2"><a href="#homework">Homework</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#questionnaire">Questionnaire</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul><h1 id="lesson-1">
@@ -154,7 +158,7 @@ window.onload = wrap_img;
     </tr>
     <tr>
       <td>Parameters</td>
-      <td style="text-align: center">The “weights” into the “program”</td>
+      <td style="text-align: center">The “weights” into the “program” that alter its performance</td>
     </tr>
     <tr>
       <td>Predictions</td>
@@ -180,8 +184,30 @@ window.onload = wrap_img;
       <td>Action</td>
       <td style="text-align: center">The decision made from reasoning about a given prediction.</td>
     </tr>
+    <tr>
+      <td>Transfer learning</td>
+      <td style="text-align: center">Using a pre-trained model for a task other than what it was originally intended for (via training)</td>
+    </tr>
+    <tr>
+      <td>Fine Tuning</td>
+      <td style="text-align: center">A transfer learning technique that updates the parameters of a pretrained model by training for additional epochs using a different task from that used for pretraining. This is also known as fitting.</td>
+    </tr>
+    <tr>
+      <td>head</td>
+      <td style="text-align: center">The last and newly added layer of a model which trains it on a particular data set. This replaces the previous layer when <code class="highlighter-rouge">cnn_learner</code> is used.</td>
+    </tr>
+    <tr>
+      <td>epoch</td>
+      <td style="text-align: center">One complete training of the model on the complete dataset</td>
+    </tr>
+    <tr>
+      <td>Over fitting</td>
+      <td style="text-align: center">When a model learns the unique characteristics of a dataset rather than a generalization, limiting its ability to do inference on new data.</td>
+    </tr>
   </tbody>
 </table>
+
+<p>Howard, Jeremy. Deep Learning for Coders with fastai and PyTorch . O’Reilly Media. Kindle Edition.</p>
 
 <p>From the loss, we can /update/ the weight for a given input, thus allowing our system to learn.</p>
 
@@ -243,6 +269,207 @@ window.onload = wrap_img;
 <a class="anchor" href="#homework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homework</h2>
 
 <p>Do the questionaire, run the notebooks, etc.</p>
+
+<h3 id="questionnaire">
+<a class="anchor" href="#questionnaire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Questionnaire</h3>
+
+<ul>
+  <li>(If you’re not sure of the answer to a question, try watching the next lesson and then coming back to this one, or read the first chapter of the book.)</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Do you need these for deep learning?</p>
+
+    <p>Lots of math T / F</p>
+
+    <ul>
+      <li>False: Much of the math is taken for you thanks to libraries such as numpy.</li>
+    </ul>
+
+    <p>Lots of data T / F</p>
+
+    <ul>
+      <li>
+        <p>False: Relatively small data sets can train world class models - no need for “Big Data”!
+ Lots of expensive computers T / F</p>
+      </li>
+      <li>
+        <p>False: You can use consumer grade hardware if you have it or take advantage of Google Cloud, AWS, Colab, etc.</p>
+      </li>
+    </ul>
+
+    <p>A PhD T / F</p>
+
+    <ul>
+      <li>False: You will need some knowledge of programming and understanding of your data set, but a PhD is not needed.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Name five areas where deep learning is now the best in the world.</p>
+
+    <ol>
+      <li>NLP (natural language processing)</li>
+      <li>Computer Vision</li>
+      <li>Medicine</li>
+      <li>Biology</li>
+      <li>Image generalization</li>
+      <li>Forecasting</li>
+      <li>Robotics (grip strength, movement)</li>
+    </ol>
+  </li>
+  <li>
+    <p>What was the name of the first device that was based on the principle of the artificial neuron?</p>
+  </li>
+</ol>
+
+<p>The Mark I Perceptron (sounds like something from Fallout!)</p>
+
+<ol>
+  <li>
+    <p>Based on the book of the same name, what are the requirements for parallel distributed processing (PDP)?</p>
+
+    <ul>
+      <li>A set of processing units</li>
+      <li>A state of activation</li>
+      <li>An output function for each unit</li>
+      <li>A pattern of connectivity between units</li>
+      <li>A propagation rule for patterns to pass between units via a pattern of connectivity</li>
+      <li>An activation rule that controls the output for a given input and current state of a unit</li>
+      <li>A learning rule that modifies patterns of connectivity</li>
+      <li>An environment to operate in (often overlooked)</li>
+    </ul>
+  </li>
+  <li>
+    <p>What were the two theoretical misunderstandings that held back the field of neural networks?</p>
+
+    <ul>
+      <li>That because a single layer of neurons could not simulate an XOR, neural networks were a dead end</li>
+      <li>DNN would be too big and too slow to be useful</li>
+    </ul>
+  </li>
+  <li>
+    <p>What is a GPU?</p>
+
+    <ul>
+      <li>A Graphcis Processing Unit, designed for massively parallel execution of floating point vectors.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Open a notebook and execute a cell containing: 1+1. What happens?</p>
+
+    <ul>
+      <li>It computes and displays the output (2)</li>
+    </ul>
+  </li>
+  <li>
+    <p>Follow through each cell of the stripped version of the notebook for this chapter. Before executing each cell, guess what will happen.</p>
+
+    <ul>
+      <li>Done in the notebook…</li>
+    </ul>
+  </li>
+  <li>
+    <p>Complete the Jupyter Notebook online appendix.</p>
+
+    <ul>
+      <li>Done</li>
+    </ul>
+  </li>
+  <li>
+    <p>Why is it hard to use a traditional computer program to recognize images in a photo?</p>
+
+    <ul>
+      <li>Requires a pixel by pixel search of the image, or something akin to a kernel to review pixel groupings, with significant comparison and cyclic complexity. Here, we tell the computer what to think, when to think it - we are explicit. This is converse to machine learning, which learns the patterns in the data and uses those patterns to recognize images in a photo.</li>
+    </ul>
+  </li>
+  <li>
+    <p>What did Samuel mean by “weight assignment”?</p>
+
+    <ul>
+      <li>Weight assignments are variables used in a model to alter the performance of the program (model). The weight assignments must have an automatic means to be updated, so as to provide feedback to improve the performance of the model for its respective purpose.</li>
+    </ul>
+  </li>
+  <li>
+    <p>What term do we normally use in deep learning for what Samuel called “weights”?</p>
+
+    <ul>
+      <li>We call them “parameters”.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Draw a picture that summarizes Samuel’s view of a machine learning model.</p>
+  </li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* results = model(inputs, weights)
+* performance = results - actuals
+* weights = performance(weights)
+
+Essentially, the inputs of a model are used to generate results. Those results have a certain performance, which is improved by modifying the weights and repeating the operation.
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Why is it hard to understand why a deep learning model makes a particular prediction?</p>
+
+    <ul>
+      <li>Because of the complexity of the “black box” - it would be necessary to instrument each layer of a neural network in order to understand why. In other words, the why is the entirety of the state machine, although some parts of the state machine may be better than others.</li>
+    </ul>
+  </li>
+  <li>
+    <p>What is the name of the theorem that shows that a neural network can solve any mathematical problem to any level of accuracy?</p>
+
+    <ul>
+      <li>Universal approximation theorem (reminds me of using taylor series expansion to approximate various mathematical functions)</li>
+    </ul>
+  </li>
+  <li>
+    <p>What do you need in order to train a model?</p>
+
+    <ul>
+      <li>You need a dataset and an architecture (a pretrained model)</li>
+    </ul>
+  </li>
+  <li>
+    <p>How could a feedback loop impact the rollout of a predictive policing model?</p>
+
+    <ul>
+      <li>Inherent bias in the dataset could lead to increased policing of a particular population representative of the bias, resulting in additional policing, enhancing the existing dataset bias.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Do we always have to use 224×224-pixel images with the cat recognition model?</p>
+
+    <ul>
+      <li>No, but larger images or sizes may impact performance of the GPU (meaning it will take longer for the model to learn)</li>
+    </ul>
+  </li>
+  <li>
+    <p>What is the difference between classification and regression?</p>
+
+    <ul>
+      <li>Classification predicts a label based on a given input</li>
+      <li>Regression predicts a future value based on previous values</li>
+    </ul>
+  </li>
+  <li>
+    <p>What is a validation set? What is a test set? Why do we need them?</p>
+
+    <ul>
+      <li>A validation or hold out set is a subset of a dataset that we do not train the model with, but we use to grade the model’s performance.</li>
+      <li>A test set is a dataset we do not show even ourselves, to avoid introducing bias through EDA and model training.</li>
+      <li>We need these to avoid overfitting or introducing bias into our models</li>
+    </ul>
+  </li>
+  <li>
+    <p>What will fastai do if you don’t provide a validation set?</p>
+
+    <ul>
+      <li>It will automatically use a subset of your data as the validation set.</li>
+    </ul>
+  </li>
+</ol>
 
   </div><a class="u-url" href="/education/fastai/2020/09/05/lesson-1.html" hidden></a>
 </article>

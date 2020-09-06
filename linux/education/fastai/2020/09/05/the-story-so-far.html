@@ -64,7 +64,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About Me</a><a class="page-link" href="/search/">Search</a><a class="page-link" href="/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/about/">About Me</a><a class="page-link" href="/links/">Useful Links</a><a class="page-link" href="/search/">Search</a><a class="page-link" href="/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -110,7 +110,13 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#hardware">Hardware</a></li>
 <li class="toc-entry toc-h3"><a href="#software">Software</a></li>
 <li class="toc-entry toc-h3"><a href="#integration--test">Integration &amp; Test</a></li>
-<li class="toc-entry toc-h3"><a href="#a-note-on-updates">A note on updates</a></li>
+<li class="toc-entry toc-h3"><a href="#a-note-on-updates">A note on updates</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#upgrading-conda-only-showing-cudatoolkit-for-visbility---your-output-will-differ">Upgrading conda (only showing cudatoolkit for visbility - your output will differ)</a></li>
+<li class="toc-entry toc-h4"><a href="#downgrading-cudatoolkit">Downgrading cudatoolkit</a></li>
+<li class="toc-entry toc-h4"><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h3"><a href="#preparing-for-class">Preparing for class</a></li>
 </ul>
 </li>
@@ -167,72 +173,75 @@ window.onload = wrap_img;
 <p>Finally we can create a new conda environment, install the necessary packages, and verify pytorch can see and use the GPU.</p>
 
 <ol>
-  <li>Create a fastai conda environment with python 3.8</li>
-</ol>
+  <li>
+    <p>Create a fastai conda environment with python 3.8</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda create <span class="nt">-n</span> fastai <span class="nv">python</span><span class="o">=</span>3.8
-<span class="nv">$ </span>conda activate fastai
-</code></pre></div></div>
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>conda create <span class="nt">-n</span> fastai <span class="nv">python</span><span class="o">=</span>3.8
+ <span class="nv">$ </span>conda activate fastai
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install fastai in conda, as per their <a href="https://docs.fast.ai/">Install Instructions</a>. It might take a while for <code class="highlighter-rouge">conda</code> to determine which channel to get the packages from.</p>
 
-<ol>
-  <li>Install fastai in conda, as per their <a href="https://docs.fast.ai/">Install Instructions</a>. It might take a while for <code class="highlighter-rouge">conda</code> to determine which channel to get the packages from.</li>
-</ol>
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>conda <span class="nb">install</span> <span class="nt">-c</span> fastai <span class="nt">-c</span> pytorch <span class="nt">-c</span> anaconda fastai gh anaconda
+ <span class="nv">$ </span>conda <span class="nb">install</span> <span class="nt">-c</span> fastai <span class="nt">-c</span> pytorch <span class="nt">-c</span> anaconda fastai gh anaconda <span class="nv">cudatoolkit</span><span class="o">=</span>10.2
+ Collecting package metadata <span class="o">(</span>current_repodata.json<span class="o">)</span>: <span class="k">done
+ </span>Solving environment: <span class="k">done</span>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda <span class="nb">install</span> <span class="nt">-c</span> fastai <span class="nt">-c</span> pytorch <span class="nt">-c</span> anaconda fastai gh anaconda
-<span class="nv">$ </span>conda <span class="nb">install</span> <span class="nt">-c</span> fastai <span class="nt">-c</span> pytorch <span class="nt">-c</span> anaconda fastai gh anaconda <span class="nv">cudatoolkit</span><span class="o">=</span>10.2
-Collecting package metadata <span class="o">(</span>current_repodata.json<span class="o">)</span>: <span class="k">done
-</span>Solving environment: <span class="k">done</span>
+ <span class="c">## Package Plan ##</span>
 
-<span class="c">## Package Plan ##</span>
+   environment location: /home/tbeck/anaconda3
 
-  environment location: /home/tbeck/anaconda3
-
-  added / updated specs:
-    - anaconda
-    - <span class="nv">cudatoolkit</span><span class="o">=</span>10.2
-    - fastai
-    - gh
+   added / updated specs:
+     - anaconda
+     - <span class="nv">cudatoolkit</span><span class="o">=</span>10.2
+     - fastai
+     - gh
 
 
-The following packages will be downloaded:
+ The following packages will be downloaded:
 
-    package                    |            build
-    <span class="nt">---------------------------</span>|-----------------
-    ca-certificates-2020.7.22  |                0         132 KB  anaconda
-    certifi-2020.6.20          |           py37_0         159 KB  anaconda
-    conda-4.8.4                |           py37_0         3.0 MB  anaconda
-    cudatoolkit-10.2.89        |       hfd86e86_1       540.0 MB  anaconda
-    gh-0.11.1                  |                0         5.5 MB  fastai
-    openssl-1.1.1g             |       h7b6447c_0         3.8 MB  anaconda
-    <span class="nt">------------------------------------------------------------</span>
+     package                    |            build
+     <span class="nt">---------------------------</span>|-----------------
+     ca-certificates-2020.7.22  |                0         132 KB  anaconda
+     certifi-2020.6.20          |           py37_0         159 KB  anaconda
+     conda-4.8.4                |           py37_0         3.0 MB  anaconda
+     cudatoolkit-10.2.89        |       hfd86e86_1       540.0 MB  anaconda
+     gh-0.11.1                  |                0         5.5 MB  fastai
+     openssl-1.1.1g             |       h7b6447c_0         3.8 MB  anaconda
+     <span class="nt">------------------------------------------------------------</span>
                                            Total:       552.5 MB
 
-The following NEW packages will be INSTALLED:
+ The following NEW packages will be INSTALLED:
 
-  gh                 fastai/linux-64::gh-0.11.1-0
+   gh                 fastai/linux-64::gh-0.11.1-0
 
-The following packages will be SUPERSEDED by a higher-priority channel:
+ The following packages will be SUPERSEDED by a higher-priority channel:
 
-  ca-certificates                                 pkgs/main <span class="nt">--</span><span class="o">&gt;</span> anaconda
-  certifi                                         pkgs/main <span class="nt">--</span><span class="o">&gt;</span> anaconda
-  conda                                           pkgs/main <span class="nt">--</span><span class="o">&gt;</span> anaconda
-  cudatoolkit                                     pkgs/main <span class="nt">--</span><span class="o">&gt;</span> anaconda
-  openssl                                         pkgs/main <span class="nt">--</span><span class="o">&gt;</span> anaconda
+   ca-certificates                                 pkgs/main <span class="nt">--</span><span class="o">&gt;</span> anaconda
+   certifi                                         pkgs/main <span class="nt">--</span><span class="o">&gt;</span> anaconda
+   conda                                           pkgs/main <span class="nt">--</span><span class="o">&gt;</span> anaconda
+   cudatoolkit                                     pkgs/main <span class="nt">--</span><span class="o">&gt;</span> anaconda
+   openssl                                         pkgs/main <span class="nt">--</span><span class="o">&gt;</span> anaconda
 
 
-Proceed <span class="o">([</span>y]/n<span class="o">)</span>?
-</code></pre></div></div>
+ Proceed <span class="o">([</span>y]/n<span class="o">)</span>?
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Once installed, you can quickly test that your GPU is seen and used from the command line like so:</p>
 
-<ol>
-  <li>Once installed, you can quickly test that your GPU is seen and used from the command line like so:</li>
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>python <span class="nt">-c</span> <span class="s1">'import torch; print(torch.cuda.get_device_name())'</span>
+ GeForce GTX 970
+ <span class="nv">$ </span>python <span class="nt">-c</span> <span class="s1">'import torch; print(torch.rand(2,3).cuda())'</span>
+ tensor<span class="o">([[</span>0.3352, 0.0835, 0.5349],
+         <span class="o">[</span>0.3712, 0.2851, 0.8767]], <span class="nv">device</span><span class="o">=</span><span class="s1">'cuda:0'</span><span class="o">)</span>
+</code></pre></div>    </div>
+  </li>
 </ol>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python <span class="nt">-c</span> <span class="s1">'import torch; print(torch.cuda.get_device_name())'</span>
-GeForce GTX 970
-<span class="nv">$ </span>python <span class="nt">-c</span> <span class="s1">'import torch; print(torch.rand(2,3).cuda())'</span>
-tensor<span class="o">([[</span>0.3352, 0.0835, 0.5349],
-        <span class="o">[</span>0.3712, 0.2851, 0.8767]], <span class="nv">device</span><span class="o">=</span><span class="s1">'cuda:0'</span><span class="o">)</span>
-</code></pre></div></div>
 
 <p>If you see your expected video card and a <code class="highlighter-rouge">tensor</code> returned, you’re all set. If you have multiple GPU’s installed, you may need to specify which one to use. Check out <a href="https://stackoverflow.com/questions/37893755/tensorflow-set-cuda-visible-devices-within-jupyter">this stack overflow article</a> on how to set the appropriate environment variables for the command line and for jupyter to work.</p>
 
@@ -241,42 +250,41 @@ tensor<span class="o">([[</span>0.3352, 0.0835, 0.5349],
 
 <p>I’ve noticed that if you update conda using <code class="highlighter-rouge">conda update --all</code>, it will try to pull in the latest version of <code class="highlighter-rouge">cudatoolkit</code>, which as of this writing is <code class="highlighter-rouge">cudatoolkit-11.0.221-h6bb024c_0</code>. This is safe to do, but you will need to downgrade back to <code class="highlighter-rouge">cudatoolkit-10.2</code>. Below is an example.</p>
 
-<ol>
-  <li>Upgrading conda (only showing cudatoolkit for visbility - your output will differ)
-```bash
-$ conda update –all
-…
-The following packages will be UPDATED:</li>
-</ol>
+<h4 id="upgrading-conda-only-showing-cudatoolkit-for-visbility---your-output-will-differ">
+<a class="anchor" href="#upgrading-conda-only-showing-cudatoolkit-for-visbility---your-output-will-differ" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrading conda (only showing cudatoolkit for visbility - your output will differ)</h4>
 
-<p>cudatoolkit        anaconda::cudatoolkit-10.2.89-hfd86e8~ –&gt; pkgs/main::cudatoolkit-11.0.221-h6bb024c_0</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda update <span class="nt">--all</span>
+...
+The following packages will be UPDATED:
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="m">2.</span> <span class="n">Downgrading</span> <span class="n">cudatoolkit</span>
-<span class="p">```</span><span class="n">bash</span>
-<span class="p">$</span> <span class="n">conda</span> <span class="n">install</span> <span class="n">pytorch</span> <span class="n">torchvision</span> <span class="n">cudatoolkit</span><span class="p">=</span><span class="m">10.2</span> <span class="p">-</span><span class="n">c</span> <span class="n">pytorch</span>
-<span class="p">...</span>
-  <span class="n">added</span> <span class="p">/</span> <span class="n">updated</span> <span class="n">specs</span><span class="p">:</span>
-    <span class="p">-</span> <span class="n">cudatoolkit</span><span class="p">=</span><span class="m">10.2</span>
-
-<span class="n">The</span> <span class="n">following</span> <span class="n">packages</span> <span class="n">will</span> <span class="n">be</span> <span class="n">downloaded</span><span class="p">:</span>
-
-    <span class="k">package</span>                    <span class="p">|</span>            <span class="n">build</span>
-    <span class="p">---------------------------|-----------------</span>
-    <span class="n">cudatoolkit</span><span class="p">-</span><span class="m">10.2.89</span>        <span class="p">|</span>       <span class="n">hfd86e86_1</span>       <span class="m">365.1</span> <span class="n">MB</span>
-    <span class="p">------------------------------------------------------------</span>
-                                           <span class="n">Total</span><span class="p">:</span>       <span class="m">365.1</span> <span class="n">MB</span>
-
-<span class="n">The</span> <span class="n">following</span> <span class="n">packages</span> <span class="n">will</span> <span class="n">be</span> <span class="n">DOWNGRADED</span><span class="p">:</span>
-
-  <span class="n">cudatoolkit</span>                           <span class="m">11.0.221</span><span class="p">-</span><span class="n">h6bb024c_0</span> <span class="p">--&gt;</span> <span class="m">10.2.89</span><span class="p">-</span><span class="n">hfd86e86_1</span>
+  cudatoolkit        anaconda::cudatoolkit-10.2.89-hfd86e8~ <span class="nt">--</span><span class="o">&gt;</span> pkgs/main::cudatoolkit-11.0.221-h6bb024c_0
 </code></pre></div></div>
 
-<ol>
-  <li>Troubleshooting</li>
-</ol>
+<h4 id="downgrading-cudatoolkit">
+<a class="anchor" href="#downgrading-cudatoolkit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Downgrading cudatoolkit</h4>
 
-<p>Note that trying to install <code class="highlighter-rouge">cudatoolkit=10.2</code> alone might result in the error below, so be sure that <code class="highlighter-rouge">pytorch</code> and <code class="highlighter-rouge">torchvision</code> are included as above.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda <span class="nb">install </span>pytorch torchvision <span class="nv">cudatoolkit</span><span class="o">=</span>10.2 <span class="nt">-c</span> pytorch
+...
+  added / updated specs:
+    - <span class="nv">cudatoolkit</span><span class="o">=</span>10.2
+
+The following packages will be downloaded:
+
+    package                    |            build
+    <span class="nt">---------------------------</span>|-----------------
+    cudatoolkit-10.2.89        |       hfd86e86_1       365.1 MB
+    <span class="nt">------------------------------------------------------------</span>
+                                           Total:       365.1 MB
+
+The following packages will be DOWNGRADED:
+
+  cudatoolkit                           11.0.221-h6bb024c_0 <span class="nt">--</span><span class="o">&gt;</span> 10.2.89-hfd86e86_1
+</code></pre></div></div>
+
+<h4 id="troubleshooting">
+<a class="anchor" href="#troubleshooting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Troubleshooting</h4>
+
+<p>If you get the below trying to use <code class="highlighter-rouge">torch</code> then cuda isn’t working as expected.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python <span class="nt">-c</span> <span class="s1">'import torch; print(torch.rand(2,3).cuda())'</span>
 Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
@@ -287,6 +295,8 @@ Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
     raise AssertionError<span class="o">(</span><span class="s2">"Torch not compiled with CUDA enabled"</span><span class="o">)</span>
 AssertionError: Torch not compiled with CUDA enabled
 </code></pre></div></div>
+
+<p>Note that trying to install <code class="highlighter-rouge">cudatoolkit=10.2</code> alone might result in this error, so be sure that <code class="highlighter-rouge">pytorch</code> and <code class="highlighter-rouge">torchvision</code> are included when specifying <code class="highlighter-rouge">cudatoolkit=10.2</code>.</p>
 
 <h3 id="preparing-for-class">
 <a class="anchor" href="#preparing-for-class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparing for class</h3>
