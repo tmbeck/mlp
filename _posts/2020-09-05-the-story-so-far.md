@@ -54,68 +54,68 @@ Finally we can create a new conda environment, install the necessary packages, a
 
 1. Create a fastai conda environment with python 3.8
 
-```bash
-$ conda create -n fastai python=3.8
-$ conda activate fastai
-```
+    ```bash
+    $ conda create -n fastai python=3.8
+    $ conda activate fastai
+    ```
 
 2. Install fastai in conda, as per their [Install Instructions](https://docs.fast.ai/). It might take a while for `conda` to determine which channel to get the packages from.
 
-```bash
-$ conda install -c fastai -c pytorch -c anaconda fastai gh anaconda
-$ conda install -c fastai -c pytorch -c anaconda fastai gh anaconda cudatoolkit=10.2
-Collecting package metadata (current_repodata.json): done
-Solving environment: done
+    ```bash
+    $ conda install -c fastai -c pytorch -c anaconda fastai gh anaconda
+    $ conda install -c fastai -c pytorch -c anaconda fastai gh anaconda cudatoolkit=10.2
+    Collecting package metadata (current_repodata.json): done
+    Solving environment: done
 
-## Package Plan ##
+    ## Package Plan ##
 
-  environment location: /home/tbeck/anaconda3
+      environment location: /home/tbeck/anaconda3
 
-  added / updated specs:
-    - anaconda
-    - cudatoolkit=10.2
-    - fastai
-    - gh
-
-
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    ca-certificates-2020.7.22  |                0         132 KB  anaconda
-    certifi-2020.6.20          |           py37_0         159 KB  anaconda
-    conda-4.8.4                |           py37_0         3.0 MB  anaconda
-    cudatoolkit-10.2.89        |       hfd86e86_1       540.0 MB  anaconda
-    gh-0.11.1                  |                0         5.5 MB  fastai
-    openssl-1.1.1g             |       h7b6447c_0         3.8 MB  anaconda
-    ------------------------------------------------------------
-                                           Total:       552.5 MB
-
-The following NEW packages will be INSTALLED:
-
-  gh                 fastai/linux-64::gh-0.11.1-0
-
-The following packages will be SUPERSEDED by a higher-priority channel:
-
-  ca-certificates                                 pkgs/main --> anaconda
-  certifi                                         pkgs/main --> anaconda
-  conda                                           pkgs/main --> anaconda
-  cudatoolkit                                     pkgs/main --> anaconda
-  openssl                                         pkgs/main --> anaconda
+      added / updated specs:
+        - anaconda
+        - cudatoolkit=10.2
+        - fastai
+        - gh
 
 
-Proceed ([y]/n)?
-```
+    The following packages will be downloaded:
+
+        package                    |            build
+        ---------------------------|-----------------
+        ca-certificates-2020.7.22  |                0         132 KB  anaconda
+        certifi-2020.6.20          |           py37_0         159 KB  anaconda
+        conda-4.8.4                |           py37_0         3.0 MB  anaconda
+        cudatoolkit-10.2.89        |       hfd86e86_1       540.0 MB  anaconda
+        gh-0.11.1                  |                0         5.5 MB  fastai
+        openssl-1.1.1g             |       h7b6447c_0         3.8 MB  anaconda
+        ------------------------------------------------------------
+                                              Total:       552.5 MB
+
+    The following NEW packages will be INSTALLED:
+
+      gh                 fastai/linux-64::gh-0.11.1-0
+
+    The following packages will be SUPERSEDED by a higher-priority channel:
+
+      ca-certificates                                 pkgs/main --> anaconda
+      certifi                                         pkgs/main --> anaconda
+      conda                                           pkgs/main --> anaconda
+      cudatoolkit                                     pkgs/main --> anaconda
+      openssl                                         pkgs/main --> anaconda
+
+
+    Proceed ([y]/n)?
+    ```
 
 3. Once installed, you can quickly test that your GPU is seen and used from the command line like so:
 
-```bash
-$ python -c 'import torch; print(torch.cuda.get_device_name())'
-GeForce GTX 970
-$ python -c 'import torch; print(torch.rand(2,3).cuda())'
-tensor([[0.3352, 0.0835, 0.5349],
-        [0.3712, 0.2851, 0.8767]], device='cuda:0')
-```
+    ```bash
+    $ python -c 'import torch; print(torch.cuda.get_device_name())'
+    GeForce GTX 970
+    $ python -c 'import torch; print(torch.rand(2,3).cuda())'
+    tensor([[0.3352, 0.0835, 0.5349],
+            [0.3712, 0.2851, 0.8767]], device='cuda:0')
+    ```
 
 If you see your expected video card and a `tensor` returned, you're all set. If you have multiple GPU's installed, you may need to specify which one to use. Check out [this stack overflow article](https://stackoverflow.com/questions/37893755/tensorflow-set-cuda-visible-devices-within-jupyter) on how to set the appropriate environment variables for the command line and for jupyter to work.
 
@@ -123,17 +123,18 @@ If you see your expected video card and a `tensor` returned, you're all set. If 
 
 I've noticed that if you update conda using `conda update --all`, it will try to pull in the latest version of `cudatoolkit`, which as of this writing is `cudatoolkit-11.0.221-h6bb024c_0`. This is safe to do, but you will need to downgrade back to `cudatoolkit-10.2`. Below is an example.
 
-1. Upgrading conda (only showing cudatoolkit for visbility - your output will differ)
+#### Upgrading conda (only showing cudatoolkit for visbility - your output will differ)
+
 ```bash
 $ conda update --all
 ...
 The following packages will be UPDATED:
 
   cudatoolkit        anaconda::cudatoolkit-10.2.89-hfd86e8~ --> pkgs/main::cudatoolkit-11.0.221-h6bb024c_0
-
 ```
 
-2. Downgrading cudatoolkit
+#### Downgrading cudatoolkit
+
 ```bash
 $ conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
 ...
@@ -153,9 +154,9 @@ The following packages will be DOWNGRADED:
   cudatoolkit                           11.0.221-h6bb024c_0 --> 10.2.89-hfd86e86_1
 ```
 
-3. Troubleshooting
+#### Troubleshooting
 
-Note that trying to install `cudatoolkit=10.2` alone might result in the error below, so be sure that `pytorch` and `torchvision` are included as above.
+If you get the below trying to use `torch` then cuda isn't working as expected.
 
 ```bash
 $ python -c 'import torch; print(torch.rand(2,3).cuda())'
@@ -167,6 +168,8 @@ Traceback (most recent call last):
     raise AssertionError("Torch not compiled with CUDA enabled")
 AssertionError: Torch not compiled with CUDA enabled
 ```
+
+Note that trying to install `cudatoolkit=10.2` alone might result in this error, so be sure that `pytorch` and `torchvision` are included when specifying `cudatoolkit=10.2`.
 
 ### Preparing for class
 
