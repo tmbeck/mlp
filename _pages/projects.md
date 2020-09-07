@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: "Projects"
 description: "Documentation on some of my projects and ideas."
 layout: page
 toc: true
