@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Useful Links
+keywords: links
 toc: true
 permalink: /links/
 ---
