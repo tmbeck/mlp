@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      2 min read
     
 </span></p>
 
@@ -108,9 +108,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#flash-cards">Flash Cards:</a></li>
 <li class="toc-entry toc-h2"><a href="#where-is-deep-learning-good">Where is Deep Learning good?</a></li>
 <li class="toc-entry toc-h2"><a href="#products-in-the-wild">Products in the wild</a></li>
+<li class="toc-entry toc-h2"><a href="#get-writing">Get Writing</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#questionnaire">Questionnaire</a></li>
 </ul><h1 id="lesson-2">
 <a class="anchor" href="#lesson-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lesson 2</h1>
 
@@ -133,6 +133,24 @@ window.onload = wrap_img;
 
 <p>Error is one kind of metric, measuring “how well you’re doing”
 Loss is a measure of performance used to improve the parameters. “Are we learning (adjusting our parameters)?”</p>
+
+<p>Model training</p>
+
+<ul>
+  <li>Built a model from Bing API search results (grizzly vs black vs teddy bears)</li>
+  <li>Used <code class="highlighter-rouge">DataBlock()</code> to create a dataset</li>
+  <li>Used dataloaders to load the data into memory</li>
+  <li>Used the <code class="highlighter-rouge">resnet18</code> architecture to train a model using the dataset, similar to lesson 1</li>
+  <li>Exported the model via pickle to productionize it - model contains the architecture + new parameters + vocabulary (labels)</li>
+  <li>Used the model to perform inference on images the model has not seen before</li>
+  <li>Used <code class="highlighter-rouge">ImageClassifierCleaner()</code> to clean the dataset</li>
+</ul>
+
+<p>Next lesson</p>
+
+<ul>
+  <li>Deploying to binder, treating your model as if it’s in production by uploading new images to it in “production”</li>
+</ul>
 
 <h2 id="jargon">
 <a class="anchor" href="#jargon" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jargon</h2>
@@ -233,62 +251,10 @@ Loss is a measure of performance used to improve the parameters. “Are we learn
 <a href="https://www.kickstarter.com/projects/birdsy/birdsy-ai-records-and-ids-birds-and-wildlife-for-you">Birdsy</a>, using computer vision to classify birds in real time</li>
 </ol>
 
-<h1 id="questionnaire">
-<a class="anchor" href="#questionnaire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Questionnaire</h1>
+<h2 id="get-writing">
+<a class="anchor" href="#get-writing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get Writing</h2>
 
-<ol>
-  <li>
-    <p>Can we always use a random sample for a validation set? Why or why not?</p>
-
-    <ul>
-      <li>If we used a random sample for validation, then repeated training (e.g. resampling the random data set and training the model on the resampled data) we could overfit our model.</li>
-      <li>If we use a static sample for validation, then repeated training won’t be able to overfit, because it will never learn from the validation set.</li>
-      <li>For example, with time series data we may hold out a specific period (say the last two weeks) of data as a validation set, rather than a random sampling of the dataset..</li>
-    </ul>
-  </li>
-  <li>
-    <p>What is overfitting? Provide an example.</p>
-
-    <ul>
-      <li>Overfitting is the process of a model “memorizing” a given dataset. This can happen when our learning rate continues to increase and our error rate tends to zero. For example, if you overtrained a model on your entire dataset of cats, it would not be able to perform inference on new cat photos it has never seen before.</li>
-    </ul>
-  </li>
-  <li>
-    <p>What is a metric? How does it differ from “loss”?</p>
-
-    <ul>
-      <li>A metric is all we care about: it is how well our model performs on our validation set.</li>
-    </ul>
-  </li>
-  <li>
-    <p>How can pretrained models help?</p>
-  </li>
-  <li>
-    <p>What is the “head” of a model?</p>
-  </li>
-  <li>
-    <p>What kinds of features do the early layers of a CNN find? How about the later layers?</p>
-  </li>
-  <li>
-    <p>Are image models only useful for photos?</p>
-  </li>
-  <li>
-    <p>What is an “architecture”?</p>
-  </li>
-  <li>
-    <p>What is segmentation?</p>
-  </li>
-  <li>
-    <p>What is y_range used for? When do we need it?</p>
-  </li>
-  <li>
-    <p>What are “hyperparameters”?</p>
-  </li>
-  <li>
-    <p>What’s the best way to avoid failures when using AI in an organization?</p>
-  </li>
-</ol>
-
+<p>This blog :)</p>
 
   </div><a class="u-url" href="/education/fastai/2020/09/06/lesson-2.html" hidden></a>
 </article>
