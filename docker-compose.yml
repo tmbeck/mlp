@@ -36,5 +36,8 @@ services:
       - .:/data/
     command: >
      bash -c "gem install bundler
-     && chmod -R u+rwx . && jekyll serve --trace --strict_front_matter"
+     && find . -type f -iname "*.rb" -exec chmod u+rwx "{}" \; 
+     && find . -type f -iname "*.sh" -exec chmod u+rwx "{}" \;
+     && find . -type f -iname "*.py" -exec chmod u+rwx "{}" \;
+     && jekyll serve --trace --strict_front_matter"
 
