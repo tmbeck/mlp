@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -102,8 +102,12 @@ window.onload = wrap_img;
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#lesson-2">Lesson 2</a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#links">Links</a></li>
-<li class="toc-entry toc-h3"><a href="#notes">Notes</a></li>
+<li class="toc-entry toc-h2"><a href="#links">Links</a></li>
+<li class="toc-entry toc-h2"><a href="#notes">Notes</a></li>
+<li class="toc-entry toc-h2"><a href="#jargon">Jargon</a></li>
+<li class="toc-entry toc-h2"><a href="#flash-cards">Flash Cards:</a></li>
+<li class="toc-entry toc-h2"><a href="#where-is-deep-learning-good">Where is Deep Learning good?</a></li>
+<li class="toc-entry toc-h2"><a href="#products-in-the-wild">Products in the wild</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#questionnaire">Questionnaire</a></li>
@@ -112,16 +116,122 @@ window.onload = wrap_img;
 
 <p>Notes from fastai lesson 2.</p>
 
-<h3 id="links">
-<a class="anchor" href="#links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Links</h3>
+<h2 id="links">
+<a class="anchor" href="#links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Links</h2>
 
 <ul>
   <li><a href="https://course.fast.ai/videos/?lesson=2">Lesson 2 Video</a></li>
   <li><a href="https://forums.fast.ai/">fastai Forum</a></li>
+  <li><a href="https://modelzoo.co/">Model Zoo</a></li>
+  <li><a href="https://github.com/onnx/models">ONNX Models</a></li>
 </ul>
 
-<h3 id="notes">
-<a class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h3>
+<h2 id="notes">
+<a class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h2>
+
+<p>Transfer learning: using an existing architecture to create a model trained on a particular data set</p>
+
+<p>Error is one kind of metric, measuring “how well you’re doing”
+Loss is a measure of performance used to improve the parameters. “Are we learning (adjusting our parameters)?”</p>
+
+<h2 id="jargon">
+<a class="anchor" href="#jargon" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jargon</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Jargon We Use (again)</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Label</td>
+      <td style="text-align: left">The data we’re trying to predict (recall the diagram)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Architecture</td>
+      <td style="text-align: left">A template of the model we are trying to fit. It represents the mathematical function we pass inputs &amp; parameters to.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Model</td>
+      <td style="text-align: left">An architecture with a specific set of parameters. The parameters may be created through training over one or more epochs.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Parameters</td>
+      <td style="text-align: left">The values of the model that we can alter trough training.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Fit or Train</td>
+      <td style="text-align: left">Updating the parameters such that the model is better able to predict our labels.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Pretrained model</td>
+      <td style="text-align: left">A model with parameters adjusted via training, typically will be <code class="highlighter-rouge">fine_tune()</code>d, such as <code class="highlighter-rouge">resnet34</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">fine tune</td>
+      <td style="text-align: left">Update a pretrained model for another task, such as making <code class="highlighter-rouge">resnet34</code> recognize cats or dogs.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">epoch</td>
+      <td style="text-align: left">One complete pass through the input data</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">metric</td>
+      <td style="text-align: left">A measure of how good the model is to control training via SGD</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">validation set</td>
+      <td style="text-align: left">A subset of our data we do not train our model with to measure its performance</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">training set</td>
+      <td style="text-align: left">A subset of our data we train our model with that does not include any data from the validation set</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">overfitting</td>
+      <td style="text-align: left">Training a model that results in memorization rather than generalization</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">cnn</td>
+      <td style="text-align: left">A convolutional neural network, a type of NN suited for computer vision</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="flash-cards">
+<a class="anchor" href="#flash-cards" aria-hidden="true"><span class="octicon octicon-link"></span></a>Flash Cards:</h2>
+
+<ul>
+  <li>Architecture vs. Model?
+    <ul>
+      <li>A model includes an architecture with a specific set of parameters. These parameters allow the architecture to do something it wasn’t originally designed to do.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="where-is-deep-learning-good">
+<a class="anchor" href="#where-is-deep-learning-good" aria-hidden="true"><span class="octicon octicon-link"></span></a>Where is Deep Learning good?</h2>
+
+<ol>
+  <li>Computer Vision - detection &amp; classification</li>
+  <li>Text - Classifiction &amp; conversation (but not really)</li>
+  <li>Tabular - Effective on high cardinality datasets, e.g. part numbers and serial numbers</li>
+  <li>Recommendation Systems (Recsys, aka Collaborative Filtering), but note predictions &lt;&gt; recommendations - because you like to read science fiction, a model might predict you’ll like Aasimov - but that might not be what you want from a recommendation engine e.g. if you’re branching out to Romance.</li>
+  <li>Multi-modal - Combining the above, capition images, humans in the loop</li>
+  <li>Various other - NLP, protein</li>
+</ol>
+
+<h2 id="products-in-the-wild">
+<a class="anchor" href="#products-in-the-wild" aria-hidden="true"><span class="octicon octicon-link"></span></a>Products in the wild</h2>
+
+<ol>
+  <li>
+<a href="https://www.kickstarter.com/projects/2092430307/arsenal-2/description">Arsenal 2</a>, combining a camera with an AI platform</li>
+  <li>
+<a href="https://www.kickstarter.com/projects/birdsy/birdsy-ai-records-and-ids-birds-and-wildlife-for-you">Birdsy</a>, using computer vision to classify birds in real time</li>
+</ol>
 
 <h1 id="questionnaire">
 <a class="anchor" href="#questionnaire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Questionnaire</h1>

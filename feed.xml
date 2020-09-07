@@ -1,15 +1,115 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://blog.tbeck.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.tbeck.io/" rel="alternate" type="text/html" /><updated>2020-09-07T13:43:22-05:00</updated><id>https://blog.tbeck.io/feed.xml</id><title type="html">ML Development Blog</title><subtitle>Blogging my experiences learning ML via the fast.ai courses.</subtitle><entry><title type="html">fastai v4: Lesson 2</title><link href="https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2.html" rel="alternate" type="text/html" title="fastai v4: Lesson 2" /><published>2020-09-06T00:00:00-05:00</published><updated>2020-09-06T00:00:00-05:00</updated><id>https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2</id><content type="html" xml:base="https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2.html">&lt;h1 id=&quot;lesson-2&quot;&gt;Lesson 2&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://blog.tbeck.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.tbeck.io/" rel="alternate" type="text/html" /><updated>2020-09-07T13:48:24-05:00</updated><id>https://blog.tbeck.io/feed.xml</id><title type="html">ML Development Blog</title><subtitle>Blogging my experiences learning ML via the fast.ai courses.</subtitle><entry><title type="html">fastai v4: Lesson 2</title><link href="https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2.html" rel="alternate" type="text/html" title="fastai v4: Lesson 2" /><published>2020-09-06T00:00:00-05:00</published><updated>2020-09-06T00:00:00-05:00</updated><id>https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2</id><content type="html" xml:base="https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2.html">&lt;h1 id=&quot;lesson-2&quot;&gt;Lesson 2&lt;/h1&gt;
 
 &lt;p&gt;Notes from fastai lesson 2.&lt;/p&gt;
 
-&lt;h3 id=&quot;links&quot;&gt;Links&lt;/h3&gt;
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://course.fast.ai/videos/?lesson=2&quot;&gt;Lesson 2 Video&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://forums.fast.ai/&quot;&gt;fastai Forum&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://modelzoo.co/&quot;&gt;Model Zoo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/onnx/models&quot;&gt;ONNX Models&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
+
+&lt;p&gt;Transfer learning: using an existing architecture to create a model trained on a particular data set&lt;/p&gt;
+
+&lt;p&gt;Error is one kind of metric, measuring “how well you’re doing”
+Loss is a measure of performance used to improve the parameters. “Are we learning (adjusting our parameters)?”&lt;/p&gt;
+
+&lt;h2 id=&quot;jargon&quot;&gt;Jargon&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Jargon We Use (again)&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Label&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;The data we’re trying to predict (recall the diagram)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Architecture&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;A template of the model we are trying to fit. It represents the mathematical function we pass inputs &amp;amp; parameters to.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Model&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;An architecture with a specific set of parameters. The parameters may be created through training over one or more epochs.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Parameters&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;The values of the model that we can alter trough training.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Fit or Train&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Updating the parameters such that the model is better able to predict our labels.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Pretrained model&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;A model with parameters adjusted via training, typically will be &lt;code class=&quot;highlighter-rouge&quot;&gt;fine_tune()&lt;/code&gt;d, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;resnet34&lt;/code&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;fine tune&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Update a pretrained model for another task, such as making &lt;code class=&quot;highlighter-rouge&quot;&gt;resnet34&lt;/code&gt; recognize cats or dogs.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;epoch&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;One complete pass through the input data&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;metric&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;A measure of how good the model is to control training via SGD&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;validation set&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;A subset of our data we do not train our model with to measure its performance&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;training set&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;A subset of our data we train our model with that does not include any data from the validation set&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;overfitting&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Training a model that results in memorization rather than generalization&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;cnn&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;A convolutional neural network, a type of NN suited for computer vision&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;flash-cards&quot;&gt;Flash Cards:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Architecture vs. Model?
+    &lt;ul&gt;
+      &lt;li&gt;A model includes an architecture with a specific set of parameters. These parameters allow the architecture to do something it wasn’t originally designed to do.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;where-is-deep-learning-good&quot;&gt;Where is Deep Learning good?&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Computer Vision - detection &amp;amp; classification&lt;/li&gt;
+  &lt;li&gt;Text - Classifiction &amp;amp; conversation (but not really)&lt;/li&gt;
+  &lt;li&gt;Tabular - Effective on high cardinality datasets, e.g. part numbers and serial numbers&lt;/li&gt;
+  &lt;li&gt;Recommendation Systems (Recsys, aka Collaborative Filtering), but note predictions &amp;lt;&amp;gt; recommendations - because you like to read science fiction, a model might predict you’ll like Aasimov - but that might not be what you want from a recommendation engine e.g. if you’re branching out to Romance.&lt;/li&gt;
+  &lt;li&gt;Multi-modal - Combining the above, capition images, humans in the loop&lt;/li&gt;
+  &lt;li&gt;Various other - NLP, protein&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;products-in-the-wild&quot;&gt;Products in the wild&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kickstarter.com/projects/2092430307/arsenal-2/description&quot;&gt;Arsenal 2&lt;/a&gt;, combining a camera with an AI platform&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kickstarter.com/projects/birdsy/birdsy-ai-records-and-ids-birds-and-wildlife-for-you&quot;&gt;Birdsy&lt;/a&gt;, using computer vision to classify birds in real time&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h1 id=&quot;questionnaire&quot;&gt;Questionnaire&lt;/h1&gt;
 
@@ -778,14 +878,14 @@ AssertionError: Torch not compiled with CUDA enabled
 
 &lt;p&gt;Notes from fastai lesson 1.&lt;/p&gt;
 
-&lt;h3 id=&quot;links&quot;&gt;Links&lt;/h3&gt;
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://course.fast.ai/videos/?lesson=1&quot;&gt;Lesson 1 Video&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://forums.fast.ai/&quot;&gt;fastai Forum&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Discussed what’s needed to take this course (not much!).&lt;/li&gt;
@@ -801,68 +901,120 @@ AssertionError: Torch not compiled with CUDA enabled
       &lt;li&gt;Need a way to update weights - SGD: stochastic gradient descent - to update the weights&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Jargon&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ML Limitations&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;A model can only be created from data&lt;/li&gt;
+      &lt;li&gt;A model can only learn from patterns in the inputs&lt;/li&gt;
+      &lt;li&gt;A model can only make a prediction - actions happen externally&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Labeled data is key and often missing - good part, bad part, etc.&lt;/p&gt;
+
+    &lt;p&gt;It is important to note that a feedback loop can be created, resulting in a causal relationship where none existed before. Jeremy gave an example in &lt;a href=&quot;https://youtu.be/_QUEXsHfsA0?t=3677&quot;&gt;lesson 1&lt;/a&gt;. This goes to ethics along ML and understanding inherent biases in your training dataset that you may not be aware of.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The fastai notebook&lt;/p&gt;
+
+    &lt;p&gt;Intro to fastai. Discuss REPL, data sets, etc.&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;fastai.vision.all&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;learner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnn_learner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resnet34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;Here &lt;code class=&quot;highlighter-rouge&quot;&gt;cnn_learner&lt;/code&gt; is a function that generates our model, &lt;code class=&quot;highlighter-rouge&quot;&gt;dls&lt;/code&gt; is our dataset, &lt;code class=&quot;highlighter-rouge&quot;&gt;resnet34&lt;/code&gt; is our architecture, and &lt;code class=&quot;highlighter-rouge&quot;&gt;error_rate&lt;/code&gt; is a loss function for feedback.&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;resnet34&lt;/code&gt; is a predefined neural network trained on images that is free to use. &lt;code class=&quot;highlighter-rouge&quot;&gt;34&lt;/code&gt; indicates it has 34 layers, more layers requires more GPU memory.&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;error_rate&lt;/code&gt; is computed on data not used in training, also known as a holdout set or validation set, to help avoid overfitting. Might need to increase the size of the holdout set to avoid overfitting. The ambiguiuty is actually important in model building, otherwise the model will only know how to recognize images it has seen before.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Other uses&lt;/p&gt;
+
+    &lt;p&gt;segmentation: figuring out what every pixel in an image is (what label it corresponds to)&lt;/p&gt;
+
+    &lt;p&gt;For a PWA, labels might be&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;trace, screw, via, component&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;A larger training set might allow&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;trace, via, capacitor, resistor, inductor, transistor, integrated circuit, etc.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Project idea: create an architecture for use in image segmentation that is trained on images of various PWAs (raspberry Pis, motherboards, etc.) to recognize features.&lt;/p&gt;
+
+    &lt;p&gt;tabular data: fitting a model to predict salary based on a variety of parameters, predicting ratings a user might give a movie they haven’t seen based on previous ratings they have given (known as collaboration, used in recommendation engines)&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h2 id=&quot;jargon&quot;&gt;Jargon&lt;/h2&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;Keyword&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Description&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Keyword&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Description&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;Architecture&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The “program” we are running. Often synonymous with model, but represents its functional form..&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Architecture&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;The “program” we are running. Often synonymous with model, but represents its functional form..&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Parameters&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The “weights” into the “program” that alter its performance&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Parameters&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;The “weights” into the “program” that alter its performance&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Predictions&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The output of our architecture, computed from independent variables which does not include labels&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Predictions&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;The output of our architecture, computed from independent variables which does not include labels&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Labels&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The targets or dependent variables, assumed to be true for a given prediction.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Labels&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;The targets or dependent variables, assumed to be true for a given prediction.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Loss&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;A metric of performance we measure our model by: how well did our prediction (computed from independent variables) match our labels (our dependent variables)?&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Loss&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;A metric of performance we measure our model by: how well did our prediction (computed from independent variables) match our labels (our dependent variables)?&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Model&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The combination of the parameters and architecture that can act on inputs to generate a prediction.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Model&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;The combination of the parameters and architecture that can act on inputs to generate a prediction.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Inputs&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The data on which the model acts to generate a prediction. No inputs (data) == No predictions!&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Inputs&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;The data on which the model acts to generate a prediction. No inputs (data) == No predictions!&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Action&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The decision made from reasoning about a given prediction.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Action&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;The decision made from reasoning about a given prediction.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Transfer learning&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Using a pre-trained model for a task other than what it was originally intended for (via training)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Transfer learning&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Using a pre-trained model for a task other than what it was originally intended for (via training)&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Fine Tuning&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;A transfer learning technique that updates the parameters of a pretrained model by training for additional epochs using a different task from that used for pretraining. This is also known as fitting.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Fine Tuning&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;A transfer learning technique that updates the parameters of a pretrained model by training for additional epochs using a different task from that used for pretraining. This is also known as fitting.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;head&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The last and newly added layer of a model which trains it on a particular data set. This replaces the previous layer when &lt;code class=&quot;highlighter-rouge&quot;&gt;cnn_learner&lt;/code&gt; is used.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;head&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;The last and newly added layer of a model which trains it on a particular data set. This replaces the previous layer when &lt;code class=&quot;highlighter-rouge&quot;&gt;cnn_learner&lt;/code&gt; is used.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;epoch&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;One complete training of the model on the complete dataset&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;epoch&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;One complete training of the model on the complete dataset&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Over fitting&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;When a model learns the unique characteristics of a dataset rather than a generalization, limiting its ability to do inference on new data.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Over fitting&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;When a model learns the unique characteristics of a dataset rather than a generalization, limiting its ability to do inference on new data.&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -870,60 +1022,6 @@ AssertionError: Torch not compiled with CUDA enabled
 &lt;p&gt;Howard, Jeremy. Deep Learning for Coders with fastai and PyTorch . O’Reilly Media. Kindle Edition.&lt;/p&gt;
 
 &lt;p&gt;From the loss, we can /update/ the weight for a given input, thus allowing our system to learn.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;ML Limitations&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A model can only be created from data&lt;/li&gt;
-  &lt;li&gt;A model can only learn from patterns in the inputs&lt;/li&gt;
-  &lt;li&gt;A model can only make a prediction - actions happen externally&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Labeled data is key and often missing - good part, bad part, etc.&lt;/p&gt;
-
-&lt;p&gt;It is important to note that a feedback loop can be created, resulting in a causal relationship where none existed before. Jeremy gave an example in &lt;a href=&quot;https://youtu.be/_QUEXsHfsA0?t=3677&quot;&gt;lesson 1&lt;/a&gt;. This goes to ethics along ML and understanding inherent biases in your training dataset that you may not be aware of.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;The fastai notebook&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Intro to fastai. Discuss REPL, data sets, etc.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;fastai.vision.all&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;learner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnn_learner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resnet34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here &lt;code class=&quot;highlighter-rouge&quot;&gt;cnn_learner&lt;/code&gt; is a function that generates our model, &lt;code class=&quot;highlighter-rouge&quot;&gt;dls&lt;/code&gt; is our dataset, &lt;code class=&quot;highlighter-rouge&quot;&gt;resnet34&lt;/code&gt; is our architecture, and &lt;code class=&quot;highlighter-rouge&quot;&gt;error_rate&lt;/code&gt; is a loss function for feedback.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;resnet34&lt;/code&gt; is a predefined neural network trained on images that is free to use. &lt;code class=&quot;highlighter-rouge&quot;&gt;34&lt;/code&gt; indicates it has 34 layers, more layers requires more GPU memory.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;error_rate&lt;/code&gt; is computed on data not used in training, also known as a holdout set or validation set, to help avoid overfitting. Might need to increase the size of the holdout set to avoid overfitting. The ambiguiuty is actually important in model building, otherwise the model will only know how to recognize images it has seen before.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Other uses&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;segmentation: figuring out what every pixel in an image is (what label it corresponds to)&lt;/p&gt;
-
-&lt;p&gt;For a PWA, labels might be&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;trace, screw, via, component&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A larger training set might allow&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;trace, via, capacitor, resistor, inductor, transistor, integrated circuit, etc.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Project idea: create an architecture for use in image segmentation that is trained on images of various PWAs (raspberry Pis, motherboards, etc.) to recognize features.&lt;/p&gt;
-
-&lt;p&gt;tabular data: fitting a model to predict salary based on a variety of parameters, predicting ratings a user might give a movie they haven’t seen based on previous ratings they have given (known as collaboration, used in recommendation engines)&lt;/p&gt;
 
 &lt;h2 id=&quot;homework&quot;&gt;Homework&lt;/h2&gt;
 

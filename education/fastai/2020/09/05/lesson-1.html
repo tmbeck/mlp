@@ -102,8 +102,9 @@ window.onload = wrap_img;
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#lesson-1">Lesson 1</a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#links">Links</a></li>
-<li class="toc-entry toc-h3"><a href="#notes">Notes</a></li>
+<li class="toc-entry toc-h2"><a href="#links">Links</a></li>
+<li class="toc-entry toc-h2"><a href="#notes">Notes</a></li>
+<li class="toc-entry toc-h2"><a href="#jargon">Jargon</a></li>
 <li class="toc-entry toc-h2"><a href="#homework">Homework</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#questionnaire">Questionnaire</a></li>
@@ -116,16 +117,16 @@ window.onload = wrap_img;
 
 <p>Notes from fastai lesson 1.</p>
 
-<h3 id="links">
-<a class="anchor" href="#links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Links</h3>
+<h2 id="links">
+<a class="anchor" href="#links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Links</h2>
 
 <ul>
   <li><a href="https://course.fast.ai/videos/?lesson=1">Lesson 1 Video</a></li>
   <li><a href="https://forums.fast.ai/">fastai Forum</a></li>
 </ul>
 
-<h3 id="notes">
-<a class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h3>
+<h2 id="notes">
+<a class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h2>
 
 <ol>
   <li>Discussed what’s needed to take this course (not much!).</li>
@@ -141,68 +142,123 @@ window.onload = wrap_img;
       <li>Need a way to update weights - SGD: stochastic gradient descent - to update the weights</li>
     </ul>
   </li>
-  <li>Jargon</li>
+  <li>
+    <p>ML Limitations</p>
+
+    <ul>
+      <li>A model can only be created from data</li>
+      <li>A model can only learn from patterns in the inputs</li>
+      <li>A model can only make a prediction - actions happen externally</li>
+    </ul>
+
+    <p>Labeled data is key and often missing - good part, bad part, etc.</p>
+
+    <p>It is important to note that a feedback loop can be created, resulting in a causal relationship where none existed before. Jeremy gave an example in <a href="https://youtu.be/_QUEXsHfsA0?t=3677">lesson 1</a>. This goes to ethics along ML and understanding inherent biases in your training dataset that you may not be aware of.</p>
+  </li>
+  <li>
+    <p>The fastai notebook</p>
+
+    <p>Intro to fastai. Discuss REPL, data sets, etc.</p>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="kn">from</span> <span class="nn">fastai.vision.all</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div>    </div>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="n">learner</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet34</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Here <code class="highlighter-rouge">cnn_learner</code> is a function that generates our model, <code class="highlighter-rouge">dls</code> is our dataset, <code class="highlighter-rouge">resnet34</code> is our architecture, and <code class="highlighter-rouge">error_rate</code> is a loss function for feedback.</p>
+
+    <p><code class="highlighter-rouge">resnet34</code> is a predefined neural network trained on images that is free to use. <code class="highlighter-rouge">34</code> indicates it has 34 layers, more layers requires more GPU memory.</p>
+
+    <p><code class="highlighter-rouge">error_rate</code> is computed on data not used in training, also known as a holdout set or validation set, to help avoid overfitting. Might need to increase the size of the holdout set to avoid overfitting. The ambiguiuty is actually important in model building, otherwise the model will only know how to recognize images it has seen before.</p>
+  </li>
+  <li>
+    <p>Other uses</p>
+
+    <p>segmentation: figuring out what every pixel in an image is (what label it corresponds to)</p>
+
+    <p>For a PWA, labels might be</p>
+
+    <ul>
+      <li>trace, screw, via, component</li>
+    </ul>
+
+    <p>A larger training set might allow</p>
+
+    <ul>
+      <li>trace, via, capacitor, resistor, inductor, transistor, integrated circuit, etc.</li>
+    </ul>
+
+    <p>Project idea: create an architecture for use in image segmentation that is trained on images of various PWAs (raspberry Pis, motherboards, etc.) to recognize features.</p>
+
+    <p>tabular data: fitting a model to predict salary based on a variety of parameters, predicting ratings a user might give a movie they haven’t seen based on previous ratings they have given (known as collaboration, used in recommendation engines)</p>
+  </li>
 </ol>
+
+<h2 id="jargon">
+<a class="anchor" href="#jargon" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jargon</h2>
 
 <table>
   <thead>
     <tr>
-      <th>Keyword</th>
-      <th style="text-align: center">Description</th>
+      <th style="text-align: center">Keyword</th>
+      <th style="text-align: left">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Architecture</td>
-      <td style="text-align: center">The “program” we are running. Often synonymous with model, but represents its functional form..</td>
+      <td style="text-align: center">Architecture</td>
+      <td style="text-align: left">The “program” we are running. Often synonymous with model, but represents its functional form..</td>
     </tr>
     <tr>
-      <td>Parameters</td>
-      <td style="text-align: center">The “weights” into the “program” that alter its performance</td>
+      <td style="text-align: center">Parameters</td>
+      <td style="text-align: left">The “weights” into the “program” that alter its performance</td>
     </tr>
     <tr>
-      <td>Predictions</td>
-      <td style="text-align: center">The output of our architecture, computed from independent variables which does not include labels</td>
+      <td style="text-align: center">Predictions</td>
+      <td style="text-align: left">The output of our architecture, computed from independent variables which does not include labels</td>
     </tr>
     <tr>
-      <td>Labels</td>
-      <td style="text-align: center">The targets or dependent variables, assumed to be true for a given prediction.</td>
+      <td style="text-align: center">Labels</td>
+      <td style="text-align: left">The targets or dependent variables, assumed to be true for a given prediction.</td>
     </tr>
     <tr>
-      <td>Loss</td>
-      <td style="text-align: center">A metric of performance we measure our model by: how well did our prediction (computed from independent variables) match our labels (our dependent variables)?</td>
+      <td style="text-align: center">Loss</td>
+      <td style="text-align: left">A metric of performance we measure our model by: how well did our prediction (computed from independent variables) match our labels (our dependent variables)?</td>
     </tr>
     <tr>
-      <td>Model</td>
-      <td style="text-align: center">The combination of the parameters and architecture that can act on inputs to generate a prediction.</td>
+      <td style="text-align: center">Model</td>
+      <td style="text-align: left">The combination of the parameters and architecture that can act on inputs to generate a prediction.</td>
     </tr>
     <tr>
-      <td>Inputs</td>
-      <td style="text-align: center">The data on which the model acts to generate a prediction. No inputs (data) == No predictions!</td>
+      <td style="text-align: center">Inputs</td>
+      <td style="text-align: left">The data on which the model acts to generate a prediction. No inputs (data) == No predictions!</td>
     </tr>
     <tr>
-      <td>Action</td>
-      <td style="text-align: center">The decision made from reasoning about a given prediction.</td>
+      <td style="text-align: center">Action</td>
+      <td style="text-align: left">The decision made from reasoning about a given prediction.</td>
     </tr>
     <tr>
-      <td>Transfer learning</td>
-      <td style="text-align: center">Using a pre-trained model for a task other than what it was originally intended for (via training)</td>
+      <td style="text-align: center">Transfer learning</td>
+      <td style="text-align: left">Using a pre-trained model for a task other than what it was originally intended for (via training)</td>
     </tr>
     <tr>
-      <td>Fine Tuning</td>
-      <td style="text-align: center">A transfer learning technique that updates the parameters of a pretrained model by training for additional epochs using a different task from that used for pretraining. This is also known as fitting.</td>
+      <td style="text-align: center">Fine Tuning</td>
+      <td style="text-align: left">A transfer learning technique that updates the parameters of a pretrained model by training for additional epochs using a different task from that used for pretraining. This is also known as fitting.</td>
     </tr>
     <tr>
-      <td>head</td>
-      <td style="text-align: center">The last and newly added layer of a model which trains it on a particular data set. This replaces the previous layer when <code class="highlighter-rouge">cnn_learner</code> is used.</td>
+      <td style="text-align: center">head</td>
+      <td style="text-align: left">The last and newly added layer of a model which trains it on a particular data set. This replaces the previous layer when <code class="highlighter-rouge">cnn_learner</code> is used.</td>
     </tr>
     <tr>
-      <td>epoch</td>
-      <td style="text-align: center">One complete training of the model on the complete dataset</td>
+      <td style="text-align: center">epoch</td>
+      <td style="text-align: left">One complete training of the model on the complete dataset</td>
     </tr>
     <tr>
-      <td>Over fitting</td>
-      <td style="text-align: center">When a model learns the unique characteristics of a dataset rather than a generalization, limiting its ability to do inference on new data.</td>
+      <td style="text-align: center">Over fitting</td>
+      <td style="text-align: left">When a model learns the unique characteristics of a dataset rather than a generalization, limiting its ability to do inference on new data.</td>
     </tr>
   </tbody>
 </table>
@@ -210,60 +266,6 @@ window.onload = wrap_img;
 <p>Howard, Jeremy. Deep Learning for Coders with fastai and PyTorch . O’Reilly Media. Kindle Edition.</p>
 
 <p>From the loss, we can /update/ the weight for a given input, thus allowing our system to learn.</p>
-
-<ol>
-  <li>ML Limitations</li>
-</ol>
-
-<ul>
-  <li>A model can only be created from data</li>
-  <li>A model can only learn from patterns in the inputs</li>
-  <li>A model can only make a prediction - actions happen externally</li>
-</ul>
-
-<p>Labeled data is key and often missing - good part, bad part, etc.</p>
-
-<p>It is important to note that a feedback loop can be created, resulting in a causal relationship where none existed before. Jeremy gave an example in <a href="https://youtu.be/_QUEXsHfsA0?t=3677">lesson 1</a>. This goes to ethics along ML and understanding inherent biases in your training dataset that you may not be aware of.</p>
-
-<ol>
-  <li>The fastai notebook</li>
-</ol>
-
-<p>Intro to fastai. Discuss REPL, data sets, etc.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastai.vision.all</span> <span class="kn">import</span> <span class="o">*</span>
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learner</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet34</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Here <code class="highlighter-rouge">cnn_learner</code> is a function that generates our model, <code class="highlighter-rouge">dls</code> is our dataset, <code class="highlighter-rouge">resnet34</code> is our architecture, and <code class="highlighter-rouge">error_rate</code> is a loss function for feedback.</p>
-
-<p><code class="highlighter-rouge">resnet34</code> is a predefined neural network trained on images that is free to use. <code class="highlighter-rouge">34</code> indicates it has 34 layers, more layers requires more GPU memory.</p>
-
-<p><code class="highlighter-rouge">error_rate</code> is computed on data not used in training, also known as a holdout set or validation set, to help avoid overfitting. Might need to increase the size of the holdout set to avoid overfitting. The ambiguiuty is actually important in model building, otherwise the model will only know how to recognize images it has seen before.</p>
-
-<ol>
-  <li>Other uses</li>
-</ol>
-
-<p>segmentation: figuring out what every pixel in an image is (what label it corresponds to)</p>
-
-<p>For a PWA, labels might be</p>
-
-<ul>
-  <li>trace, screw, via, component</li>
-</ul>
-
-<p>A larger training set might allow</p>
-
-<ul>
-  <li>trace, via, capacitor, resistor, inductor, transistor, integrated circuit, etc.</li>
-</ul>
-
-<p>Project idea: create an architecture for use in image segmentation that is trained on images of various PWAs (raspberry Pis, motherboards, etc.) to recognize features.</p>
-
-<p>tabular data: fitting a model to predict salary based on a variety of parameters, predicting ratings a user might give a movie they haven’t seen based on previous ratings they have given (known as collaboration, used in recommendation engines)</p>
 
 <h2 id="homework">
 <a class="anchor" href="#homework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homework</h2>
