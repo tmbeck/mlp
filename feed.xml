@@ -1,357 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://blog.tbeck.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.tbeck.io/" rel="alternate" type="text/html" /><updated>2020-09-06T15:59:44-05:00</updated><id>https://blog.tbeck.io/feed.xml</id><title type="html">ML Development Blog</title><subtitle>Blogging my experiences learning ML via the fast.ai courses.</subtitle><entry><title type="html">fastai v4: Lesson 1</title><link href="https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1.html" rel="alternate" type="text/html" title="fastai v4: Lesson 1" /><published>2020-09-05T00:00:00-05:00</published><updated>2020-09-05T00:00:00-05:00</updated><id>https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1</id><content type="html" xml:base="https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1.html">&lt;h1 id=&quot;lesson-1&quot;&gt;Lesson 1&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://blog.tbeck.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.tbeck.io/" rel="alternate" type="text/html" /><updated>2020-09-07T13:13:56-05:00</updated><id>https://blog.tbeck.io/feed.xml</id><title type="html">ML Development Blog</title><subtitle>Blogging my experiences learning ML via the fast.ai courses.</subtitle><entry><title type="html">fastai v4: Lesson 2</title><link href="https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2.html" rel="alternate" type="text/html" title="fastai v4: Lesson 2" /><published>2020-09-06T00:00:00-05:00</published><updated>2020-09-06T00:00:00-05:00</updated><id>https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2</id><content type="html" xml:base="https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2.html">&lt;h1 id=&quot;lesson-2&quot;&gt;Lesson 2&lt;/h1&gt;
 
-&lt;p&gt;Notes from fastai lesson 1.&lt;/p&gt;
+&lt;p&gt;Notes from fastai lesson 2.&lt;/p&gt;
 
 &lt;h3 id=&quot;links&quot;&gt;Links&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://course.fast.ai/videos/?lesson=1&quot;&gt;Lesson 1 Video&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://course.fast.ai/videos/?lesson=2&quot;&gt;Lesson 2 Video&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://forums.fast.ai/&quot;&gt;fastai Forum&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Discussed what’s needed to take this course (not much!).&lt;/li&gt;
-  &lt;li&gt;Discussed history of AI and how deep neural networks came to be. Mostly news to me, 1/10.&lt;/li&gt;
-  &lt;li&gt;Introduced Jupyter, ipywidgets, REPL. Mostly seen this before, 7/10.&lt;/li&gt;
-  &lt;li&gt;Introduced ML (repeat, but still new, 4/10)
-    &lt;ul&gt;
-      &lt;li&gt;take an input, process it, get an output.&lt;/li&gt;
-      &lt;li&gt;Samuel’s terminology: take inputs &amp;amp; weights into a model, generate results&lt;/li&gt;
-      &lt;li&gt;Add feedback: measure performance of the results (a metric), then change weights. Rinse &amp;amp; repeat.&lt;/li&gt;
-      &lt;li&gt;Different weights to the model allows it to do a different task&lt;/li&gt;
-      &lt;li&gt;Universal approximation theorem: theory that a neural network could solve any problem to any level of accuracy.&lt;/li&gt;
-      &lt;li&gt;Need a way to update weights - SGD: stochastic gradient descent - to update the weights&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Jargon&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Keyword&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Architecture&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The “program” we are running. Often synonymous with model, but represents its functional form..&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Parameters&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The “weights” into the “program” that alter its performance&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Predictions&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The output of our architecture, computed from independent variables which does not include labels&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Labels&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The targets or dependent variables, assumed to be true for a given prediction.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Loss&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;A metric of performance we measure our model by: how well did our prediction (computed from independent variables) match our labels (our dependent variables)?&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Model&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The combination of the parameters and architecture that can act on inputs to generate a prediction.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Inputs&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The data on which the model acts to generate a prediction. No inputs (data) == No predictions!&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Action&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The decision made from reasoning about a given prediction.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Transfer learning&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Using a pre-trained model for a task other than what it was originally intended for (via training)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Fine Tuning&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;A transfer learning technique that updates the parameters of a pretrained model by training for additional epochs using a different task from that used for pretraining. This is also known as fitting.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;head&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;The last and newly added layer of a model which trains it on a particular data set. This replaces the previous layer when &lt;code class=&quot;highlighter-rouge&quot;&gt;cnn_learner&lt;/code&gt; is used.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;epoch&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;One complete training of the model on the complete dataset&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Over fitting&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;When a model learns the unique characteristics of a dataset rather than a generalization, limiting its ability to do inference on new data.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Howard, Jeremy. Deep Learning for Coders with fastai and PyTorch . O’Reilly Media. Kindle Edition.&lt;/p&gt;
-
-&lt;p&gt;From the loss, we can /update/ the weight for a given input, thus allowing our system to learn.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;ML Limitations&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A model can only be created from data&lt;/li&gt;
-  &lt;li&gt;A model can only learn from patterns in the inputs&lt;/li&gt;
-  &lt;li&gt;A model can only make a prediction - actions happen externally&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Labeled data is key and often missing - good part, bad part, etc.&lt;/p&gt;
-
-&lt;p&gt;It is important to note that a feedback loop can be created, resulting in a causal relationship where none existed before. Jeremy gave an example in &lt;a href=&quot;https://youtu.be/_QUEXsHfsA0?t=3677&quot;&gt;lesson 1&lt;/a&gt;. This goes to ethics along ML and understanding inherent biases in your training dataset that you may not be aware of.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;The fastai notebook&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Intro to fastai. Discuss REPL, data sets, etc.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;fastai.vision.all&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;learner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnn_learner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resnet34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here &lt;code class=&quot;highlighter-rouge&quot;&gt;cnn_learner&lt;/code&gt; is a function that generates our model, &lt;code class=&quot;highlighter-rouge&quot;&gt;dls&lt;/code&gt; is our dataset, &lt;code class=&quot;highlighter-rouge&quot;&gt;resnet34&lt;/code&gt; is our architecture, and &lt;code class=&quot;highlighter-rouge&quot;&gt;error_rate&lt;/code&gt; is a loss function for feedback.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;resnet34&lt;/code&gt; is a predefined neural network trained on images that is free to use. &lt;code class=&quot;highlighter-rouge&quot;&gt;34&lt;/code&gt; indicates it has 34 layers, more layers requires more GPU memory.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;error_rate&lt;/code&gt; is computed on data not used in training, also known as a holdout set or validation set, to help avoid overfitting. Might need to increase the size of the holdout set to avoid overfitting. The ambiguiuty is actually important in model building, otherwise the model will only know how to recognize images it has seen before.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Other uses&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;segmentation: figuring out what every pixel in an image is (what label it corresponds to)&lt;/p&gt;
-
-&lt;p&gt;For a PWA, labels might be&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;trace, screw, via, component&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A larger training set might allow&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;trace, via, capacitor, resistor, inductor, transistor, integrated circuit, etc.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Project idea: create an architecture for use in image segmentation that is trained on images of various PWAs (raspberry Pis, motherboards, etc.) to recognize features.&lt;/p&gt;
-
-&lt;p&gt;tabular data: fitting a model to predict salary based on a variety of parameters, predicting ratings a user might give a movie they haven’t seen based on previous ratings they have given (known as collaboration, used in recommendation engines)&lt;/p&gt;
-
-&lt;h2 id=&quot;homework&quot;&gt;Homework&lt;/h2&gt;
-
-&lt;p&gt;Do the questionaire, run the notebooks, etc.&lt;/p&gt;
-
-&lt;h3 id=&quot;questionnaire&quot;&gt;Questionnaire&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;(If you’re not sure of the answer to a question, try watching the next lesson and then coming back to this one, or read the first chapter of the book.)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h1 id=&quot;questionnaire&quot;&gt;Questionnaire&lt;/h1&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;Do you need these for deep learning?&lt;/p&gt;
-
-    &lt;p&gt;Lots of math T / F&lt;/p&gt;
+    &lt;p&gt;Can we always use a random sample for a validation set? Why or why not?&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;False: Much of the math is taken for you thanks to libraries such as numpy.&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;Lots of data T / F&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;False: Relatively small data sets can train world class models - no need for “Big Data”!
- Lots of expensive computers T / F&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;False: You can use consumer grade hardware if you have it or take advantage of Google Cloud, AWS, Colab, etc.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;A PhD T / F&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;False: You will need some knowledge of programming and understanding of your data set, but a PhD is not needed.&lt;/li&gt;
+      &lt;li&gt;If we used a random sample for validation, then repeated training (e.g. resampling the random data set and training the model on the resampled data) we could overfit our model.&lt;/li&gt;
+      &lt;li&gt;If we use a static sample for validation, then repeated training won’t be able to overfit, because it will never learn from the validation set.&lt;/li&gt;
+      &lt;li&gt;For example, with time series data we may hold out a specific period (say the last two weeks) of data as a validation set, rather than a random sampling of the dataset..&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Name five areas where deep learning is now the best in the world.&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;NLP (natural language processing)&lt;/li&gt;
-      &lt;li&gt;Computer Vision&lt;/li&gt;
-      &lt;li&gt;Medicine&lt;/li&gt;
-      &lt;li&gt;Biology&lt;/li&gt;
-      &lt;li&gt;Image generalization&lt;/li&gt;
-      &lt;li&gt;Forecasting&lt;/li&gt;
-      &lt;li&gt;Robotics (grip strength, movement)&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;What was the name of the first device that was based on the principle of the artificial neuron?&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The Mark I Perceptron (sounds like something from Fallout!)&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Based on the book of the same name, what are the requirements for parallel distributed processing (PDP)?&lt;/p&gt;
+    &lt;p&gt;What is overfitting? Provide an example.&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;A set of processing units&lt;/li&gt;
-      &lt;li&gt;A state of activation&lt;/li&gt;
-      &lt;li&gt;An output function for each unit&lt;/li&gt;
-      &lt;li&gt;A pattern of connectivity between units&lt;/li&gt;
-      &lt;li&gt;A propagation rule for patterns to pass between units via a pattern of connectivity&lt;/li&gt;
-      &lt;li&gt;An activation rule that controls the output for a given input and current state of a unit&lt;/li&gt;
-      &lt;li&gt;A learning rule that modifies patterns of connectivity&lt;/li&gt;
-      &lt;li&gt;An environment to operate in (often overlooked)&lt;/li&gt;
+      &lt;li&gt;Overfitting is the process of a model “memorizing” a given dataset. This can happen when our learning rate continues to increase and our error rate tends to zero. For example, if you overtrained a model on your entire dataset of cats, it would not be able to perform inference on new cat photos it has never seen before.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;What were the two theoretical misunderstandings that held back the field of neural networks?&lt;/p&gt;
+    &lt;p&gt;What is a metric? How does it differ from “loss”?&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;That because a single layer of neurons could not simulate an XOR, neural networks were a dead end&lt;/li&gt;
-      &lt;li&gt;DNN would be too big and too slow to be useful&lt;/li&gt;
+      &lt;li&gt;A metric is all we care about: it is how well our model performs on our validation set.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;What is a GPU?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;A Graphcis Processing Unit, designed for massively parallel execution of floating point vectors.&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;p&gt;How can pretrained models help?&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Open a notebook and execute a cell containing: 1+1. What happens?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;It computes and displays the output (2)&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;p&gt;What is the “head” of a model?&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Follow through each cell of the stripped version of the notebook for this chapter. Before executing each cell, guess what will happen.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Done in the notebook…&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;p&gt;What kinds of features do the early layers of a CNN find? How about the later layers?&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Complete the Jupyter Notebook online appendix.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Done&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;p&gt;Are image models only useful for photos?&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Why is it hard to use a traditional computer program to recognize images in a photo?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Requires a pixel by pixel search of the image, or something akin to a kernel to review pixel groupings, with significant comparison and cyclic complexity. Here, we tell the computer what to think, when to think it - we are explicit. This is converse to machine learning, which learns the patterns in the data and uses those patterns to recognize images in a photo.&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;p&gt;What is an “architecture”?&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;What did Samuel mean by “weight assignment”?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Weight assignments are variables used in a model to alter the performance of the program (model). The weight assignments must have an automatic means to be updated, so as to provide feedback to improve the performance of the model for its respective purpose.&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;p&gt;What is segmentation?&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;What term do we normally use in deep learning for what Samuel called “weights”?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;We call them “parameters”.&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;p&gt;What is y_range used for? When do we need it?&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Draw a picture that summarizes Samuel’s view of a machine learning model.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* results = model(inputs, weights)
-* performance = results - actuals
-* weights = performance(weights)
-
-Essentially, the inputs of a model are used to generate results. Those results have a certain performance, which is improved by modifying the weights and repeating the operation.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Why is it hard to understand why a deep learning model makes a particular prediction?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Because of the complexity of the “black box” - it would be necessary to instrument each layer of a neural network in order to understand why. In other words, the why is the entirety of the state machine, although some parts of the state machine may be better than others.&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;p&gt;What are “hyperparameters”?&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;What is the name of the theorem that shows that a neural network can solve any mathematical problem to any level of accuracy?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Universal approximation theorem (reminds me of using taylor series expansion to approximate various mathematical functions)&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;p&gt;What’s the best way to avoid failures when using AI in an organization?&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;What do you need in order to train a model?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;You need a dataset and an architecture (a pretrained model)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;How could a feedback loop impact the rollout of a predictive policing model?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Inherent bias in the dataset could lead to increased policing of a particular population representative of the bias, resulting in additional policing, enhancing the existing dataset bias.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Do we always have to use 224×224-pixel images with the cat recognition model?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;No, but larger images or sizes may impact performance of the GPU (meaning it will take longer for the model to learn)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;What is the difference between classification and regression?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Classification predicts a label based on a given input&lt;/li&gt;
-      &lt;li&gt;Regression predicts a future value based on previous values&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;What is a validation set? What is a test set? Why do we need them?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;A validation or hold out set is a subset of a dataset that we do not train the model with, but we use to grade the model’s performance.&lt;/li&gt;
-      &lt;li&gt;A test set is a dataset we do not show even ourselves, to avoid introducing bias through EDA and model training.&lt;/li&gt;
-      &lt;li&gt;We need these to avoid overfitting or introducing bias into our models&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;What will fastai do if you don’t provide a validation set?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;It will automatically use a subset of your data as the validation set.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>&lt;a href='https://www.linkedin.com/in/tmbeck'&gt;Tim Beck&lt;/a&gt;</name></author><summary type="html">Lesson 1</summary></entry><entry><title type="html">Wavelets in Jupyter Notebooks</title><link href="https://blog.tbeck.io/wavelets/jupyter/2020/09/05/pywavelets.html" rel="alternate" type="text/html" title="Wavelets in Jupyter Notebooks" /><published>2020-09-05T00:00:00-05:00</published><updated>2020-09-05T00:00:00-05:00</updated><id>https://blog.tbeck.io/wavelets/jupyter/2020/09/05/pywavelets</id><content type="html" xml:base="https://blog.tbeck.io/wavelets/jupyter/2020/09/05/pywavelets.html">&lt;!--
+&lt;/ol&gt;</content><author><name>&lt;a href='https://www.linkedin.com/in/tmbeck'&gt;Tim Beck&lt;/a&gt;</name></author><summary type="html">Lesson 2</summary></entry><entry><title type="html">Wavelets in Jupyter Notebooks</title><link href="https://blog.tbeck.io/wavelets/jupyter/2020/09/05/pywavelets.html" rel="alternate" type="text/html" title="Wavelets in Jupyter Notebooks" /><published>2020-09-05T00:00:00-05:00</published><updated>2020-09-05T00:00:00-05:00</updated><id>https://blog.tbeck.io/wavelets/jupyter/2020/09/05/pywavelets</id><content type="html" xml:base="https://blog.tbeck.io/wavelets/jupyter/2020/09/05/pywavelets.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -1061,4 +774,357 @@ AssertionError: Torch not compiled with CUDA enabled
 
 &lt;p&gt;Now I just run &lt;code class=&quot;highlighter-rouge&quot;&gt;screen&lt;/code&gt;, activate conda with &lt;code class=&quot;highlighter-rouge&quot;&gt;conda activate fastai&lt;/code&gt;, and finally start jupyter with &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter notebook&lt;/code&gt;. For tricks on using screen see &lt;a href=&quot;https://gist.github.com/jctosta/af918e1618682638aa82&quot;&gt;this quickreference&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;If you prefer to use jupyter lab, you’ll need to &lt;code class=&quot;highlighter-rouge&quot;&gt;conda install jupyterlab&lt;/code&gt; and run &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter lab&lt;/code&gt; instead.&lt;/p&gt;</content><author><name>&lt;a href='https://www.linkedin.com/in/tmbeck'&gt;Tim Beck&lt;/a&gt;</name></author><summary type="html">The Story so Far</summary></entry></feed>
+&lt;p&gt;If you prefer to use jupyter lab, you’ll need to &lt;code class=&quot;highlighter-rouge&quot;&gt;conda install jupyterlab&lt;/code&gt; and run &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter lab&lt;/code&gt; instead.&lt;/p&gt;</content><author><name>&lt;a href='https://www.linkedin.com/in/tmbeck'&gt;Tim Beck&lt;/a&gt;</name></author><summary type="html">The Story so Far</summary></entry><entry><title type="html">fastai v4: Lesson 1</title><link href="https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1.html" rel="alternate" type="text/html" title="fastai v4: Lesson 1" /><published>2020-09-05T00:00:00-05:00</published><updated>2020-09-05T00:00:00-05:00</updated><id>https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1</id><content type="html" xml:base="https://blog.tbeck.io/education/fastai/2020/09/05/lesson-1.html">&lt;h1 id=&quot;lesson-1&quot;&gt;Lesson 1&lt;/h1&gt;
+
+&lt;p&gt;Notes from fastai lesson 1.&lt;/p&gt;
+
+&lt;h3 id=&quot;links&quot;&gt;Links&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://course.fast.ai/videos/?lesson=1&quot;&gt;Lesson 1 Video&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://forums.fast.ai/&quot;&gt;fastai Forum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Discussed what’s needed to take this course (not much!).&lt;/li&gt;
+  &lt;li&gt;Discussed history of AI and how deep neural networks came to be. Mostly news to me, 1/10.&lt;/li&gt;
+  &lt;li&gt;Introduced Jupyter, ipywidgets, REPL. Mostly seen this before, 7/10.&lt;/li&gt;
+  &lt;li&gt;Introduced ML (repeat, but still new, 4/10)
+    &lt;ul&gt;
+      &lt;li&gt;take an input, process it, get an output.&lt;/li&gt;
+      &lt;li&gt;Samuel’s terminology: take inputs &amp;amp; weights into a model, generate results&lt;/li&gt;
+      &lt;li&gt;Add feedback: measure performance of the results (a metric), then change weights. Rinse &amp;amp; repeat.&lt;/li&gt;
+      &lt;li&gt;Different weights to the model allows it to do a different task&lt;/li&gt;
+      &lt;li&gt;Universal approximation theorem: theory that a neural network could solve any problem to any level of accuracy.&lt;/li&gt;
+      &lt;li&gt;Need a way to update weights - SGD: stochastic gradient descent - to update the weights&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Jargon&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Keyword&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Architecture&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;The “program” we are running. Often synonymous with model, but represents its functional form..&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Parameters&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;The “weights” into the “program” that alter its performance&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Predictions&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;The output of our architecture, computed from independent variables which does not include labels&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Labels&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;The targets or dependent variables, assumed to be true for a given prediction.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Loss&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;A metric of performance we measure our model by: how well did our prediction (computed from independent variables) match our labels (our dependent variables)?&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Model&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;The combination of the parameters and architecture that can act on inputs to generate a prediction.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Inputs&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;The data on which the model acts to generate a prediction. No inputs (data) == No predictions!&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Action&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;The decision made from reasoning about a given prediction.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Transfer learning&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Using a pre-trained model for a task other than what it was originally intended for (via training)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fine Tuning&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;A transfer learning technique that updates the parameters of a pretrained model by training for additional epochs using a different task from that used for pretraining. This is also known as fitting.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;head&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;The last and newly added layer of a model which trains it on a particular data set. This replaces the previous layer when &lt;code class=&quot;highlighter-rouge&quot;&gt;cnn_learner&lt;/code&gt; is used.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;epoch&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;One complete training of the model on the complete dataset&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Over fitting&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;When a model learns the unique characteristics of a dataset rather than a generalization, limiting its ability to do inference on new data.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Howard, Jeremy. Deep Learning for Coders with fastai and PyTorch . O’Reilly Media. Kindle Edition.&lt;/p&gt;
+
+&lt;p&gt;From the loss, we can /update/ the weight for a given input, thus allowing our system to learn.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ML Limitations&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A model can only be created from data&lt;/li&gt;
+  &lt;li&gt;A model can only learn from patterns in the inputs&lt;/li&gt;
+  &lt;li&gt;A model can only make a prediction - actions happen externally&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Labeled data is key and often missing - good part, bad part, etc.&lt;/p&gt;
+
+&lt;p&gt;It is important to note that a feedback loop can be created, resulting in a causal relationship where none existed before. Jeremy gave an example in &lt;a href=&quot;https://youtu.be/_QUEXsHfsA0?t=3677&quot;&gt;lesson 1&lt;/a&gt;. This goes to ethics along ML and understanding inherent biases in your training dataset that you may not be aware of.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The fastai notebook&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Intro to fastai. Discuss REPL, data sets, etc.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;fastai.vision.all&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;learner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnn_learner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resnet34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here &lt;code class=&quot;highlighter-rouge&quot;&gt;cnn_learner&lt;/code&gt; is a function that generates our model, &lt;code class=&quot;highlighter-rouge&quot;&gt;dls&lt;/code&gt; is our dataset, &lt;code class=&quot;highlighter-rouge&quot;&gt;resnet34&lt;/code&gt; is our architecture, and &lt;code class=&quot;highlighter-rouge&quot;&gt;error_rate&lt;/code&gt; is a loss function for feedback.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;resnet34&lt;/code&gt; is a predefined neural network trained on images that is free to use. &lt;code class=&quot;highlighter-rouge&quot;&gt;34&lt;/code&gt; indicates it has 34 layers, more layers requires more GPU memory.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;error_rate&lt;/code&gt; is computed on data not used in training, also known as a holdout set or validation set, to help avoid overfitting. Might need to increase the size of the holdout set to avoid overfitting. The ambiguiuty is actually important in model building, otherwise the model will only know how to recognize images it has seen before.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Other uses&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;segmentation: figuring out what every pixel in an image is (what label it corresponds to)&lt;/p&gt;
+
+&lt;p&gt;For a PWA, labels might be&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;trace, screw, via, component&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A larger training set might allow&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;trace, via, capacitor, resistor, inductor, transistor, integrated circuit, etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Project idea: create an architecture for use in image segmentation that is trained on images of various PWAs (raspberry Pis, motherboards, etc.) to recognize features.&lt;/p&gt;
+
+&lt;p&gt;tabular data: fitting a model to predict salary based on a variety of parameters, predicting ratings a user might give a movie they haven’t seen based on previous ratings they have given (known as collaboration, used in recommendation engines)&lt;/p&gt;
+
+&lt;h2 id=&quot;homework&quot;&gt;Homework&lt;/h2&gt;
+
+&lt;p&gt;Do the questionaire, run the notebooks, etc.&lt;/p&gt;
+
+&lt;h3 id=&quot;questionnaire&quot;&gt;Questionnaire&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(If you’re not sure of the answer to a question, try watching the next lesson and then coming back to this one, or read the first chapter of the book.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do you need these for deep learning?&lt;/p&gt;
+
+    &lt;p&gt;Lots of math T / F&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;False: Much of the math is taken for you thanks to libraries such as numpy.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Lots of data T / F&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;False: Relatively small data sets can train world class models - no need for “Big Data”!
+ Lots of expensive computers T / F&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;False: You can use consumer grade hardware if you have it or take advantage of Google Cloud, AWS, Colab, etc.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;A PhD T / F&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;False: You will need some knowledge of programming and understanding of your data set, but a PhD is not needed.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Name five areas where deep learning is now the best in the world.&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;NLP (natural language processing)&lt;/li&gt;
+      &lt;li&gt;Computer Vision&lt;/li&gt;
+      &lt;li&gt;Medicine&lt;/li&gt;
+      &lt;li&gt;Biology&lt;/li&gt;
+      &lt;li&gt;Image generalization&lt;/li&gt;
+      &lt;li&gt;Forecasting&lt;/li&gt;
+      &lt;li&gt;Robotics (grip strength, movement)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What was the name of the first device that was based on the principle of the artificial neuron?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The Mark I Perceptron (sounds like something from Fallout!)&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Based on the book of the same name, what are the requirements for parallel distributed processing (PDP)?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;A set of processing units&lt;/li&gt;
+      &lt;li&gt;A state of activation&lt;/li&gt;
+      &lt;li&gt;An output function for each unit&lt;/li&gt;
+      &lt;li&gt;A pattern of connectivity between units&lt;/li&gt;
+      &lt;li&gt;A propagation rule for patterns to pass between units via a pattern of connectivity&lt;/li&gt;
+      &lt;li&gt;An activation rule that controls the output for a given input and current state of a unit&lt;/li&gt;
+      &lt;li&gt;A learning rule that modifies patterns of connectivity&lt;/li&gt;
+      &lt;li&gt;An environment to operate in (often overlooked)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What were the two theoretical misunderstandings that held back the field of neural networks?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;That because a single layer of neurons could not simulate an XOR, neural networks were a dead end&lt;/li&gt;
+      &lt;li&gt;DNN would be too big and too slow to be useful&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is a GPU?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;A Graphcis Processing Unit, designed for massively parallel execution of floating point vectors.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open a notebook and execute a cell containing: 1+1. What happens?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;It computes and displays the output (2)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Follow through each cell of the stripped version of the notebook for this chapter. Before executing each cell, guess what will happen.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Done in the notebook…&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Complete the Jupyter Notebook online appendix.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Done&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Why is it hard to use a traditional computer program to recognize images in a photo?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Requires a pixel by pixel search of the image, or something akin to a kernel to review pixel groupings, with significant comparison and cyclic complexity. Here, we tell the computer what to think, when to think it - we are explicit. This is converse to machine learning, which learns the patterns in the data and uses those patterns to recognize images in a photo.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What did Samuel mean by “weight assignment”?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Weight assignments are variables used in a model to alter the performance of the program (model). The weight assignments must have an automatic means to be updated, so as to provide feedback to improve the performance of the model for its respective purpose.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What term do we normally use in deep learning for what Samuel called “weights”?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;We call them “parameters”.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Draw a picture that summarizes Samuel’s view of a machine learning model.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* results = model(inputs, weights)
+* performance = results - actuals
+* weights = performance(weights)
+
+Essentially, the inputs of a model are used to generate results. Those results have a certain performance, which is improved by modifying the weights and repeating the operation.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Why is it hard to understand why a deep learning model makes a particular prediction?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Because of the complexity of the “black box” - it would be necessary to instrument each layer of a neural network in order to understand why. In other words, the why is the entirety of the state machine, although some parts of the state machine may be better than others.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is the name of the theorem that shows that a neural network can solve any mathematical problem to any level of accuracy?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Universal approximation theorem (reminds me of using taylor series expansion to approximate various mathematical functions)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What do you need in order to train a model?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;You need a dataset and an architecture (a pretrained model)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;How could a feedback loop impact the rollout of a predictive policing model?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Inherent bias in the dataset could lead to increased policing of a particular population representative of the bias, resulting in additional policing, enhancing the existing dataset bias.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do we always have to use 224×224-pixel images with the cat recognition model?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;No, but larger images or sizes may impact performance of the GPU (meaning it will take longer for the model to learn)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is the difference between classification and regression?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Classification predicts the category of a given input (think predicting finite enumerations)&lt;/li&gt;
+      &lt;li&gt;Regression predicts a future numeric value, like the temperature tomorrow&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is a validation set? What is a test set? Why do we need them?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;A validation or hold out set is a subset of a dataset that we do not train the model with, but we use to grade the model’s performance.&lt;/li&gt;
+      &lt;li&gt;A test set is a dataset we do not show even ourselves, to avoid introducing bias through EDA and model training.&lt;/li&gt;
+      &lt;li&gt;We need these to avoid overfitting or introducing bias into our models&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What will fastai do if you don’t provide a validation set?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;It will automatically use a subset of your data as the validation set.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>&lt;a href='https://www.linkedin.com/in/tmbeck'&gt;Tim Beck&lt;/a&gt;</name></author><summary type="html">Lesson 1</summary></entry></feed>
