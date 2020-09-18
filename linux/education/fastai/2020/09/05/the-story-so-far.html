@@ -165,6 +165,11 @@ window.onload = wrap_img;
 
 <p>You might also find the <a href="https://docs.nvidia.com/cuda/archive/10.2/cuda-installation-guide-linux/index.html">NVIDIA CUDA Installation Guide for Linux</a> helpful for troubleshooting installation issues.</p>
 
+<p>Finally, to take advantage of the GPU you must install the GPU-accelerated version of <a href="https://pytorch.org/get-started/locally/">pytorch</a>. Only the conda instructions are needed since the system python isn’t used.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda <span class="nb">install </span>pytorch torchvision <span class="nv">cudatoolkit</span><span class="o">=</span>10.2 <span class="nt">-c</span> pytorch
+</code></pre></div></div>
+
 <p>Reboot as needed.</p>
 
 <h3 id="integration--test">
@@ -248,7 +253,7 @@ window.onload = wrap_img;
 <h3 id="a-note-on-updates">
 <a class="anchor" href="#a-note-on-updates" aria-hidden="true"><span class="octicon octicon-link"></span></a>A note on updates</h3>
 
-<p>I’ve noticed that if you update conda using <code class="highlighter-rouge">conda update --all</code>, it will try to pull in the latest version of <code class="highlighter-rouge">cudatoolkit</code>, which as of this writing is <code class="highlighter-rouge">cudatoolkit-11.0.221-h6bb024c_0</code>. This is safe to do, but you will need to downgrade back to <code class="highlighter-rouge">cudatoolkit-10.2</code>. Below is an example.</p>
+<p>I’ve noticed that if you update conda using <code class="highlighter-rouge">conda update --all</code>, it will try to pull in the latest version of <code class="highlighter-rouge">cudatoolkit</code>, which as of this writing is <code class="highlighter-rouge">cudatoolkit-11.0.221-h6bb024c_0</code>. This is safe to do, but you will need to downgrade back to <code class="highlighter-rouge">cudatoolkit-10.2</code>. This seems to be due to how anaconda handles/prioritizes packages from various channels. Below is an example.</p>
 
 <h4 id="upgrading-conda-only-showing-cudatoolkit-for-visbility---your-output-will-differ">
 <a class="anchor" href="#upgrading-conda-only-showing-cudatoolkit-for-visbility---your-output-will-differ" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrading conda (only showing cudatoolkit for visbility - your output will differ)</h4>

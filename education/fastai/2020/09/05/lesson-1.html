@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      12 min read
+      14 min read
     
 </span></p>
 
@@ -110,6 +110,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#questionnaire">Questionnaire</a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#further-research">Further Research</a></li>
 </ul>
 </li>
 </ul><h1 id="lesson-1">
@@ -558,6 +559,36 @@ Essentially, the inputs of a model are used to generate results. Those results h
     <ul>
       <li>To understand why a validation and test data set are needed and to ensure they are properly used when developing a model.</li>
     </ul>
+  </li>
+</ol>
+
+<h2 id="further-research">
+<a class="anchor" href="#further-research" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Research</h2>
+
+<p>I skipped these because I thought the answers were easy, but decided to return to them for completeness.</p>
+
+<ol>
+  <li>
+    <p>Why is a GPU useful for deep learning? How is a CPU different, and why is it less effective for deep learning?</p>
+
+    <ul>
+      <li>GPU’s contain thousands of massively parallel execution cores optimized for floating point arithmetic and matrix math. They contain relatively small amounts of extremely high bandwidth memory. These properties make them advantageous for DL, but inhibit them from being used for, say, running a Web Browser. CPU’s are general purpose computing devices, containing substantially fewer cores, slower memory speed, and tend to favor integer math over floating point math or matrix math (although Intel has tried to change this with AVX512…poorly). A key performance indicator for both CPU and GPUs that tend to lead to effective DL is the FLOP (floating point operations). GPUs typically have substantially higher FLOPs than CPUs.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Try to think of three areas where feedback loops might impact the use of machine learning. See if you can find documented examples of that happening in practice.</p>
+
+    <ol>
+      <li>
+        <p>Elections: if a model with a feedback loop is used to predict election outcomes and has substantial influence on a population of voters, it could dissentivize voters from turning out for an election. While this might be most visible for American presedential races, it could affect less publicized elections such as those for ballot measures and Congress. I don’t think Five-Thirty-Eight is this…yet.</p>
+      </li>
+      <li>
+        <p>With the recent Facebook news and Russian influence in American Democracy, I think we’re beginning to see a trend of adversarial machine learning, which is exploiting a competitors production models to destablize or influence its outcome. I think nation states and other actors will continue to use feedback loops in active learning systems.</p>
+      </li>
+      <li>
+        <p>Search results. I Google’d a whiskey bottle to read a review before purchasing it. Now Google shows me whiskey reviews in my news feed, displacing other news articles. Reading these seems to reinforce the model and increases the number of articles I see. Since the number of articles I can read is limited, there is no way to “tone down” the model without telling it I’m simply not interested in whiskey. It’s kind of interesting because in general you implicitly train Google. You can’t implicitly untrain it (e.g. there is no decay function or “forgetting”, or it operates on a time horizon I havent seen yet).</p>
+      </li>
+    </ol>
   </li>
 </ol>
 
