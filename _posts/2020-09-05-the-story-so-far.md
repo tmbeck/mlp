@@ -46,6 +46,12 @@ I installed `nvidia-dkms-450` to provide nvidia drivers for my GTX 970.
 
 You might also find the [NVIDIA CUDA Installation Guide for Linux](https://docs.nvidia.com/cuda/archive/10.2/cuda-installation-guide-linux/index.html) helpful for troubleshooting installation issues.
 
+Finally, to take advantage of the GPU you must install the GPU-accelerated version of [pytorch](https://pytorch.org/get-started/locally/). Only the conda instructions are needed since the system python isn't used.
+
+```bash
+$ conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
+```
+
 Reboot as needed.
 
 ### Integration & Test
@@ -121,7 +127,7 @@ If you see your expected video card and a `tensor` returned, you're all set. If 
 
 ### A note on updates
 
-I've noticed that if you update conda using `conda update --all`, it will try to pull in the latest version of `cudatoolkit`, which as of this writing is `cudatoolkit-11.0.221-h6bb024c_0`. This is safe to do, but you will need to downgrade back to `cudatoolkit-10.2`. Below is an example.
+I've noticed that if you update conda using `conda update --all`, it will try to pull in the latest version of `cudatoolkit`, which as of this writing is `cudatoolkit-11.0.221-h6bb024c_0`. This is safe to do, but you will need to downgrade back to `cudatoolkit-10.2`. This seems to be due to how anaconda handles/prioritizes packages from various channels. Below is an example.
 
 #### Upgrading conda (only showing cudatoolkit for visbility - your output will differ)
 
