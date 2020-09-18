@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Projects | ML Development Blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Projects" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Documentation on some of my projects and ideas." />
@@ -14,10 +14,10 @@
 <meta property="og:url" content="https://blog.tbeck.io/projects/" />
 <meta property="og:site_name" content="ML Development Blog" />
 <script type="application/ld+json">
-{"headline":"Projects","description":"Documentation on some of my projects and ideas.","@type":"WebPage","url":"https://blog.tbeck.io/projects/","@context":"https://schema.org"}</script>
+{"description":"Documentation on some of my projects and ideas.","url":"https://blog.tbeck.io/projects/","@type":"WebPage","headline":"Projects","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://blog.tbeck.io/feed.xml" title="ML Development Blog" /><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"><link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://blog.tbeck.io/feed.xml" title="ML Development Blog" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 
 <script>
 function wrap_img(fn) {
@@ -79,17 +79,17 @@ window.onload = wrap_img;
 
 <h2 id="fossil-identification">Fossil Identification</h2>
 
-<p><a href="https://www.reddit.com">Reddit</a> is a popular social media website with user submitted content. Subreddit <code class="highlighter-rouge">r/fossils</code> frequently has posts such as <a href="https://www.reddit.com/r/fossils/comments/int102/my_grandma_found_this_on_a_lake_erie_beach_any/?utm_source=share&amp;utm_medium=web2x&amp;context=3">this one</a>, asking for identification (there is another subreddit, <code class="highlighter-rouge">r/fossilid</code>, for this purpose). Could we train a model to classify such images?</p>
+<p><a href="https://www.reddit.com">Reddit</a> is a popular social media website with user submitted content. Subreddit <code class="language-plaintext highlighter-rouge">r/fossils</code> frequently has posts such as <a href="https://www.reddit.com/r/fossils/comments/int102/my_grandma_found_this_on_a_lake_erie_beach_any/?utm_source=share&amp;utm_medium=web2x&amp;context=3">this one</a>, asking for identification (there is another subreddit, <code class="language-plaintext highlighter-rouge">r/fossilid</code>, for this purpose). Could we train a model to classify such images?</p>
 
 <p>Hypothesis: A machine learning model could ultimately be used by the scientific community to identify species, provided a sufficiently large dataset.</p>
 
 <p>Objective: Train a model that can recognize fossils. Create a reddit bot that can reply to posts with classifications, allowing for replies on various subreddits that can help train the model.</p>
 
-<p>Background: For obvious reasons, idenification and taxonomy are important topics for paleontologists. Here, I will train a model using labels that provide as much or more detail as <code class="highlighter-rouge">class</code>, as per <a href="https://en.wikipedia.org/wiki/Taxonomy_(biology)#Kingdoms_and_domains">modern taxonomic classification</a>, with the ultimate goal that a model can identify a specific species (or conversely, identify a species it does not recognise).</p>
+<p>Background: For obvious reasons, idenification and taxonomy are important topics for paleontologists. Here, I will train a model using labels that provide as much or more detail as <code class="language-plaintext highlighter-rouge">class</code>, as per <a href="https://en.wikipedia.org/wiki/Taxonomy_(biology)#Kingdoms_and_domains">modern taxonomic classification</a>, with the ultimate goal that a model can identify a specific species (or conversely, identify a species it does not recognise).</p>
 
 <p>See <a href="https://www.pnas.org/content/116/10/4394">Trilobite evolutionary rates constrain the duration of the Cambrian explosion</a> for how trilobites are classified. A model trained on sufficiently large data set should be able to identify an entire class (e.g. it can identify a fossil’s species if that fossil is known in class trilobita).</p>
 
-<p>Methodology: To do this, I use the same subreddits as a source for material in order to build a dataset. The model will use <code class="highlighter-rouge">resnet34</code> as its <code class="highlighter-rouge">architecture</code>. I build upon my growing knowledge from the fastai courses to achieve this.</p>
+<p>Methodology: To do this, I use the same subreddits as a source for material in order to build a dataset. The model will use <code class="language-plaintext highlighter-rouge">resnet34</code> as its <code class="language-plaintext highlighter-rouge">architecture</code>. I build upon my growing knowledge from the fastai courses to achieve this.</p>
 
 <h3 id="exploration">Exploration</h3>
 

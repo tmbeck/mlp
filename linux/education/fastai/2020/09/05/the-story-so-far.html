@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>The story so far | ML Development Blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="The story so far" />
 <meta name="author" content="<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>" />
 <meta property="og:locale" content="en_US" />
@@ -17,10 +17,10 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-09-05T00:00:00-05:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>"},"headline":"The story so far","dateModified":"2020-09-05T00:00:00-05:00","description":"Review &amp; notes from the first two lessons of fastai v4.","datePublished":"2020-09-05T00:00:00-05:00","@type":"BlogPosting","url":"https://blog.tbeck.io/linux/education/fastai/2020/09/05/the-story-so-far.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.tbeck.io/linux/education/fastai/2020/09/05/the-story-so-far.html"},"@context":"https://schema.org"}</script>
+{"description":"Review &amp; notes from the first two lessons of fastai v4.","url":"https://blog.tbeck.io/linux/education/fastai/2020/09/05/the-story-so-far.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.tbeck.io/linux/education/fastai/2020/09/05/the-story-so-far.html"},"headline":"The story so far","dateModified":"2020-09-05T00:00:00-05:00","datePublished":"2020-09-05T00:00:00-05:00","author":{"@type":"Person","name":"<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://blog.tbeck.io/feed.xml" title="ML Development Blog" /><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"><link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://blog.tbeck.io/feed.xml" title="ML Development Blog" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 
 <script>
 function wrap_img(fn) {
@@ -139,7 +139,7 @@ window.onload = wrap_img;
 <h3 id="hardware">
 <a class="anchor" href="#hardware" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hardware</h3>
 
-<p>These are parts I had laying around the house. The key if you want GPU acceleration with <code class="highlighter-rouge">pytorch</code> is to have the right GPU; too old and your GPU won’t support <a href="https://developer.nvidia.com/cuda-gpus">the necessary GPU compute capabilities</a>. Below is the harware I had on hand:</p>
+<p>These are parts I had laying around the house. The key if you want GPU acceleration with <code class="language-plaintext highlighter-rouge">pytorch</code> is to have the right GPU; too old and your GPU won’t support <a href="https://developer.nvidia.com/cuda-gpus">the necessary GPU compute capabilities</a>. Below is the harware I had on hand:</p>
 
 <ul>
   <li>Intel i7-4770</li>
@@ -157,11 +157,11 @@ window.onload = wrap_img;
 
 <p>I also grabbed <a href="https://docs.docker.com/engine/install/ubuntu/">docker.io</a>. Nvidia has a solution for doing GPU compute that requires docker to be installed, as well.</p>
 
-<p>Since fastai uses pytorch, and pytorch only support CPU or GPU via cudatoolkit, I needed the <code class="highlighter-rouge">nvidia.ko</code> kernel module, the necessary nvidia cuda toolkit libraries, and the right packages in a conda environment.</p>
+<p>Since fastai uses pytorch, and pytorch only support CPU or GPU via cudatoolkit, I needed the <code class="language-plaintext highlighter-rouge">nvidia.ko</code> kernel module, the necessary nvidia cuda toolkit libraries, and the right packages in a conda environment.</p>
 
-<p>I installed <code class="highlighter-rouge">nvidia-dkms-450</code> to provide nvidia drivers for my GTX 970.</p>
+<p>I installed <code class="language-plaintext highlighter-rouge">nvidia-dkms-450</code> to provide nvidia drivers for my GTX 970.</p>
 
-<p><a href="https://developer.nvidia.com/cuda-10.2-download-archive?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=Ubuntu&amp;target_version=1804&amp;target_type=debnetwork">Nvidia provides a CUDA toolkit 10.2 Ubuntu repo</a>. Even though it says 18.04, it worked fine for me on 20.04. Just follow the instructions to install the <code class="highlighter-rouge">cuda</code> package.</p>
+<p><a href="https://developer.nvidia.com/cuda-10.2-download-archive?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=Ubuntu&amp;target_version=1804&amp;target_type=debnetwork">Nvidia provides a CUDA toolkit 10.2 Ubuntu repo</a>. Even though it says 18.04, it worked fine for me on 20.04. Just follow the instructions to install the <code class="language-plaintext highlighter-rouge">cuda</code> package.</p>
 
 <p>You might also find the <a href="https://docs.nvidia.com/cuda/archive/10.2/cuda-installation-guide-linux/index.html">NVIDIA CUDA Installation Guide for Linux</a> helpful for troubleshooting installation issues.</p>
 
@@ -187,7 +187,7 @@ window.onload = wrap_img;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Install fastai in conda, as per their <a href="https://docs.fast.ai/">Install Instructions</a>. It might take a while for <code class="highlighter-rouge">conda</code> to determine which channel to get the packages from.</p>
+    <p>Install fastai in conda, as per their <a href="https://docs.fast.ai/">Install Instructions</a>. It might take a while for <code class="language-plaintext highlighter-rouge">conda</code> to determine which channel to get the packages from.</p>
 
     <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>conda <span class="nb">install</span> <span class="nt">-c</span> fastai <span class="nt">-c</span> pytorch <span class="nt">-c</span> anaconda fastai gh anaconda
@@ -248,12 +248,12 @@ window.onload = wrap_img;
   </li>
 </ol>
 
-<p>If you see your expected video card and a <code class="highlighter-rouge">tensor</code> returned, you’re all set. If you have multiple GPU’s installed, you may need to specify which one to use. Check out <a href="https://stackoverflow.com/questions/37893755/tensorflow-set-cuda-visible-devices-within-jupyter">this stack overflow article</a> on how to set the appropriate environment variables for the command line and for jupyter to work.</p>
+<p>If you see your expected video card and a <code class="language-plaintext highlighter-rouge">tensor</code> returned, you’re all set. If you have multiple GPU’s installed, you may need to specify which one to use. Check out <a href="https://stackoverflow.com/questions/37893755/tensorflow-set-cuda-visible-devices-within-jupyter">this stack overflow article</a> on how to set the appropriate environment variables for the command line and for jupyter to work.</p>
 
 <h3 id="a-note-on-updates">
 <a class="anchor" href="#a-note-on-updates" aria-hidden="true"><span class="octicon octicon-link"></span></a>A note on updates</h3>
 
-<p>I’ve noticed that if you update conda using <code class="highlighter-rouge">conda update --all</code>, it will try to pull in the latest version of <code class="highlighter-rouge">cudatoolkit</code>, which as of this writing is <code class="highlighter-rouge">cudatoolkit-11.0.221-h6bb024c_0</code>. This is safe to do, but you will need to downgrade back to <code class="highlighter-rouge">cudatoolkit-10.2</code>. This seems to be due to how anaconda handles/prioritizes packages from various channels. Below is an example.</p>
+<p>I’ve noticed that if you update conda using <code class="language-plaintext highlighter-rouge">conda update --all</code>, it will try to pull in the latest version of <code class="language-plaintext highlighter-rouge">cudatoolkit</code>, which as of this writing is <code class="language-plaintext highlighter-rouge">cudatoolkit-11.0.221-h6bb024c_0</code>. This is safe to do, but you will need to downgrade back to <code class="language-plaintext highlighter-rouge">cudatoolkit-10.2</code>. This seems to be due to how anaconda handles/prioritizes packages from various channels. Below is an example.</p>
 
 <h4 id="upgrading-conda-only-showing-cudatoolkit-for-visbility---your-output-will-differ">
 <a class="anchor" href="#upgrading-conda-only-showing-cudatoolkit-for-visbility---your-output-will-differ" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrading conda (only showing cudatoolkit for visbility - your output will differ)</h4>
@@ -289,7 +289,7 @@ The following packages will be DOWNGRADED:
 <h4 id="troubleshooting">
 <a class="anchor" href="#troubleshooting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Troubleshooting</h4>
 
-<p>If you get the below trying to use <code class="highlighter-rouge">torch</code> then cuda isn’t working as expected.</p>
+<p>If you get the below trying to use <code class="language-plaintext highlighter-rouge">torch</code> then cuda isn’t working as expected.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python <span class="nt">-c</span> <span class="s1">'import torch; print(torch.rand(2,3).cuda())'</span>
 Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
@@ -301,7 +301,7 @@ Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
 AssertionError: Torch not compiled with CUDA enabled
 </code></pre></div></div>
 
-<p>Note that trying to install <code class="highlighter-rouge">cudatoolkit=10.2</code> alone might result in this error, so be sure that <code class="highlighter-rouge">pytorch</code> and <code class="highlighter-rouge">torchvision</code> are included when specifying <code class="highlighter-rouge">cudatoolkit=10.2</code>.</p>
+<p>Note that trying to install <code class="language-plaintext highlighter-rouge">cudatoolkit=10.2</code> alone might result in this error, so be sure that <code class="language-plaintext highlighter-rouge">pytorch</code> and <code class="language-plaintext highlighter-rouge">torchvision</code> are included when specifying <code class="language-plaintext highlighter-rouge">cudatoolkit=10.2</code>.</p>
 
 <h3 id="preparing-for-class">
 <a class="anchor" href="#preparing-for-class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparing for class</h3>
@@ -309,7 +309,7 @@ AssertionError: Torch not compiled with CUDA enabled
 <p>There are two sets of notebooks for the class:</p>
 
 <ul>
-  <li>The <code class="highlighter-rouge">fastbook</code>, a guided set of notebooks with prose for following along in the videos: <a href="https://github.com/fastai/fastbook">fastbook</a>
+  <li>The <code class="language-plaintext highlighter-rouge">fastbook</code>, a guided set of notebooks with prose for following along in the videos: <a href="https://github.com/fastai/fastbook">fastbook</a>
 </li>
   <li>The same notebooks as a study aid: <a href="https://github.com/fastai/course-v4">course-v4</a>
 </li>
@@ -323,11 +323,11 @@ AssertionError: Torch not compiled with CUDA enabled
 <span class="nv">$ </span><span class="nb">cd</span> ~/src <span class="o">&amp;&amp;</span> git clone https://github.com/fastai/fastbook.git <span class="o">&amp;&amp;</span> git clone https://github.com/fastai/course-v4.git
 </code></pre></div></div>
 
-<p>Now that CUDA is working and we have the code, I prefer fire up my <code class="highlighter-rouge">jupyter notebook</code> in a <code class="highlighter-rouge">screen</code> session. To do this I generated a <a href="default%20jupyter%20notebook%20config">https://jupyter-notebook.readthedocs.io/en/stable/config.html</a> via <code class="highlighter-rouge">jupyte notebook --generate-config</code> and wrote it to <code class="highlighter-rouge">~/.jupyter/jupyte_notebook_config.py</code>. Then I made it listen on <code class="highlighter-rouge">0.0.0.0</code> so I can reach it from my LAN (or anywhere in the world via wireguard!).</p>
+<p>Now that CUDA is working and we have the code, I prefer fire up my <code class="language-plaintext highlighter-rouge">jupyter notebook</code> in a <code class="language-plaintext highlighter-rouge">screen</code> session. To do this I generated a <a href="default%20jupyter%20notebook%20config">https://jupyter-notebook.readthedocs.io/en/stable/config.html</a> via <code class="language-plaintext highlighter-rouge">jupyte notebook --generate-config</code> and wrote it to <code class="language-plaintext highlighter-rouge">~/.jupyter/jupyte_notebook_config.py</code>. Then I made it listen on <code class="language-plaintext highlighter-rouge">0.0.0.0</code> so I can reach it from my LAN (or anywhere in the world via wireguard!).</p>
 
-<p>Now I just run <code class="highlighter-rouge">screen</code>, activate conda with <code class="highlighter-rouge">conda activate fastai</code>, and finally start jupyter with <code class="highlighter-rouge">jupyter notebook</code>. For tricks on using screen see <a href="https://gist.github.com/jctosta/af918e1618682638aa82">this quickreference</a></p>
+<p>Now I just run <code class="language-plaintext highlighter-rouge">screen</code>, activate conda with <code class="language-plaintext highlighter-rouge">conda activate fastai</code>, and finally start jupyter with <code class="language-plaintext highlighter-rouge">jupyter notebook</code>. For tricks on using screen see <a href="https://gist.github.com/jctosta/af918e1618682638aa82">this quickreference</a></p>
 
-<p>If you prefer to use jupyter lab, you’ll need to <code class="highlighter-rouge">conda install jupyterlab</code> and run <code class="highlighter-rouge">jupyter lab</code> instead.</p>
+<p>If you prefer to use jupyter lab, you’ll need to <code class="language-plaintext highlighter-rouge">conda install jupyterlab</code> and run <code class="language-plaintext highlighter-rouge">jupyter lab</code> instead.</p>
 
   </div><a class="u-url" href="/linux/education/fastai/2020/09/05/the-story-so-far.html" hidden></a>
 </article>

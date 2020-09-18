@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>fastai v4: Lesson 2 | ML Development Blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="fastai v4: Lesson 2" />
 <meta name="author" content="<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>" />
 <meta property="og:locale" content="en_US" />
@@ -17,10 +17,10 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-09-06T00:00:00-05:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>"},"headline":"fastai v4: Lesson 2","dateModified":"2020-09-06T00:00:00-05:00","description":"Notes from Lesson 2 of fastai v4","datePublished":"2020-09-06T00:00:00-05:00","@type":"BlogPosting","url":"https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2.html"},"@context":"https://schema.org"}</script>
+{"description":"Notes from Lesson 2 of fastai v4","url":"https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.tbeck.io/education/fastai/2020/09/06/lesson-2.html"},"headline":"fastai v4: Lesson 2","dateModified":"2020-09-06T00:00:00-05:00","datePublished":"2020-09-06T00:00:00-05:00","author":{"@type":"Person","name":"<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://blog.tbeck.io/feed.xml" title="ML Development Blog" /><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"><link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://blog.tbeck.io/feed.xml" title="ML Development Blog" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 
 <script>
 function wrap_img(fn) {
@@ -139,12 +139,12 @@ Loss is a measure of performance used to improve the parameters. “Are we learn
 
 <ul>
   <li>Built a model from Bing API search results (grizzly vs black vs teddy bears)</li>
-  <li>Used <code class="highlighter-rouge">DataBlock()</code> to create a dataset</li>
+  <li>Used <code class="language-plaintext highlighter-rouge">DataBlock()</code> to create a dataset</li>
   <li>Used dataloaders to load the data into memory</li>
-  <li>Used the <code class="highlighter-rouge">resnet18</code> architecture to train a model using the dataset, similar to lesson 1</li>
+  <li>Used the <code class="language-plaintext highlighter-rouge">resnet18</code> architecture to train a model using the dataset, similar to lesson 1</li>
   <li>Exported the model via pickle to productionize it - model contains the architecture + new parameters + vocabulary (labels)</li>
   <li>Used the model to perform inference on images the model has not seen before</li>
-  <li>Used <code class="highlighter-rouge">ImageClassifierCleaner()</code> to clean the dataset</li>
+  <li>Used <code class="language-plaintext highlighter-rouge">ImageClassifierCleaner()</code> to clean the dataset</li>
 </ul>
 
 <p>Next lesson</p>
@@ -186,11 +186,11 @@ Loss is a measure of performance used to improve the parameters. “Are we learn
     </tr>
     <tr>
       <td style="text-align: center">Pretrained model</td>
-      <td style="text-align: left">A model with parameters adjusted via training, typically will be <code class="highlighter-rouge">fine_tune()</code>d, such as <code class="highlighter-rouge">resnet34</code>.</td>
+      <td style="text-align: left">A model with parameters adjusted via training, typically will be <code class="language-plaintext highlighter-rouge">fine_tune()</code>d, such as <code class="language-plaintext highlighter-rouge">resnet34</code>.</td>
     </tr>
     <tr>
       <td style="text-align: center">fine tune</td>
-      <td style="text-align: left">Update a pretrained model for another task, such as making <code class="highlighter-rouge">resnet34</code> recognize cats or dogs.</td>
+      <td style="text-align: left">Update a pretrained model for another task, such as making <code class="language-plaintext highlighter-rouge">resnet34</code> recognize cats or dogs.</td>
     </tr>
     <tr>
       <td style="text-align: center">epoch</td>
@@ -315,10 +315,10 @@ In situations where a model might make mistakes, and those mistakes could be har
     <p>What four things do we need to tell fastai to create DataLoaders?</p>
 
     <ol>
-      <li>How to find the data (<code class="highlighter-rouge">get_items</code>)</li>
-      <li>How to get the dependent and independent variable(s) (<code class="highlighter-rouge">get_x</code>, <code class="highlighter-rouge">get_y</code>)</li>
+      <li>How to find the data (<code class="language-plaintext highlighter-rouge">get_items</code>)</li>
+      <li>How to get the dependent and independent variable(s) (<code class="language-plaintext highlighter-rouge">get_x</code>, <code class="language-plaintext highlighter-rouge">get_y</code>)</li>
       <li>Create the data blocks (e.g. images and labels)</li>
-      <li>How to transform the items, such as <code class="highlighter-rouge">Resize(128)</code>.</li>
+      <li>How to transform the items, such as <code class="language-plaintext highlighter-rouge">Resize(128)</code>.</li>
     </ol>
   </li>
   <li>
@@ -329,7 +329,7 @@ In situations where a model might make mistakes, and those mistakes could be har
   <li>
     <p>How do we ensure a random split always gives the same validation set?</p>
 
-    <p>Use a seed value by speifying <code class="highlighter-rouge">seed=int</code> when calling <code class="highlighter-rouge">RandomSplitter()</code>.</p>
+    <p>Use a seed value by speifying <code class="language-plaintext highlighter-rouge">seed=int</code> when calling <code class="language-plaintext highlighter-rouge">RandomSplitter()</code>.</p>
   </li>
 </ol>
 

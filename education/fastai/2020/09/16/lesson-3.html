@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>fastai v4: Lesson 3 | ML Development Blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="fastai v4: Lesson 3" />
 <meta name="author" content="<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>" />
 <meta property="og:locale" content="en_US" />
@@ -17,10 +17,10 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-09-16T00:00:00-05:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>"},"headline":"fastai v4: Lesson 3","dateModified":"2020-09-16T00:00:00-05:00","description":"Notes from Lesson 3 of fastai v4","datePublished":"2020-09-16T00:00:00-05:00","@type":"BlogPosting","url":"https://blog.tbeck.io/education/fastai/2020/09/16/lesson-3.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.tbeck.io/education/fastai/2020/09/16/lesson-3.html"},"@context":"https://schema.org"}</script>
+{"description":"Notes from Lesson 3 of fastai v4","url":"https://blog.tbeck.io/education/fastai/2020/09/16/lesson-3.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.tbeck.io/education/fastai/2020/09/16/lesson-3.html"},"headline":"fastai v4: Lesson 3","dateModified":"2020-09-16T00:00:00-05:00","datePublished":"2020-09-16T00:00:00-05:00","author":{"@type":"Person","name":"<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://blog.tbeck.io/feed.xml" title="ML Development Blog" /><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"><link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://blog.tbeck.io/feed.xml" title="ML Development Blog" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 
 <script>
 function wrap_img(fn) {
@@ -142,8 +142,8 @@ window.onload = wrap_img;
 <p>Visualizing greyscale images inside of a pandas df by specifying a background graident:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">im3_t</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">im3</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">im3_t</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span><span class="mi">22</span><span class="p">])</span>
-<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s">'font-size'</span><span class="p">:</span><span class="s">'6pt'</span><span class="p">})</span><span class="o">.</span><span class="n">background_gradient</span><span class="p">(</span><span class="s">'Greys'</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">im3_t</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span><span class="mi">22</span><span class="p">])</span>
+<span class="n">df</span><span class="p">.</span><span class="n">style</span><span class="p">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s">'font-size'</span><span class="p">:</span><span class="s">'6pt'</span><span class="p">}).</span><span class="n">background_gradient</span><span class="p">(</span><span class="s">'Greys'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h4 id="stop-and-think">
@@ -166,18 +166,18 @@ window.onload = wrap_img;
   <li>
     <p>L1 norm / mean absolute difference: abs(A-B).mean()</p>
 
-    <p>Use <code class="highlighter-rouge">F.l1_loss()</code></p>
+    <p>Use <code class="language-plaintext highlighter-rouge">F.l1_loss()</code></p>
   </li>
   <li>
     <p>L2 norm / root mean square error (RMSE): sqrt(mean((A-B)^2))</p>
 
-    <p>Use <code class="highlighter-rouge">F.mse_loss()</code></p>
+    <p>Use <code class="language-plaintext highlighter-rouge">F.mse_loss()</code></p>
   </li>
 </ul>
 
-<p>When computing <code class="highlighter-rouge">mean()</code> with tensors, <code class="highlighter-rouge">mean()</code> can take an optional tuple argument that specifies the range of axes over which to compute the mean.</p>
+<p>When computing <code class="language-plaintext highlighter-rouge">mean()</code> with tensors, <code class="language-plaintext highlighter-rouge">mean()</code> can take an optional tuple argument that specifies the range of axes over which to compute the mean.</p>
 
-<p>Much of this chapter covers an introduction to numpy and tensors. Vectors and matrices aren’t new to me, and even slicing n-dimensional arrays is familiar (I have previous experience in perl and C). But I was struggling with this in python, e.g. the difference between <code class="highlighter-rouge">[:,:]</code> and <code class="highlighter-rouge">[:][:]</code>. I found this article by Jay Alammar very helpful: <a href="http://jalammar.github.io/visual-numpy/">A visual intro to numpy and data representation</a> (thank you Jay!).</p>
+<p>Much of this chapter covers an introduction to numpy and tensors. Vectors and matrices aren’t new to me, and even slicing n-dimensional arrays is familiar (I have previous experience in perl and C). But I was struggling with this in python, e.g. the difference between <code class="language-plaintext highlighter-rouge">[:,:]</code> and <code class="language-plaintext highlighter-rouge">[:][:]</code>. I found this article by Jay Alammar very helpful: <a href="http://jalammar.github.io/visual-numpy/">A visual intro to numpy and data representation</a> (thank you Jay!).</p>
 
 <p>Stochastic Gradient Descent (SGD)</p>
 
@@ -185,21 +185,21 @@ window.onload = wrap_img;
 
 <p>Weights for each pixel. Could use the computed means as weights, where the flattened mean are weights.</p>
 
-<p>Consider the simple function <code class="highlighter-rouge">def pr_eight(x,w) = (x*w).sum()</code> where <code class="highlighter-rouge">x</code>, <code class="highlighter-rouge">w</code> are vectors for the independent variables and the weights, respectively. How would we make this a machine learning “8” classifier?</p>
+<p>Consider the simple function <code class="language-plaintext highlighter-rouge">def pr_eight(x,w) = (x*w).sum()</code> where <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">w</code> are vectors for the independent variables and the weights, respectively. How would we make this a machine learning “8” classifier?</p>
 
 <ol>
   <li>Need to init(w) - seeded rand()?</li>
-  <li>For each image in our set, compute <code class="highlighter-rouge">x*w</code> e.g. make a prediction.</li>
+  <li>For each image in our set, compute <code class="language-plaintext highlighter-rouge">x*w</code> e.g. make a prediction.</li>
   <li>Compute the loss of the model (actual vs. expected)</li>
   <li>Compute the gradient: a measure of change for each weight that changes the loss</li>
   <li>Update the weights</li>
   <li>
-<code class="highlighter-rouge">goto</code> 2. until some condition (e.g. the model is good)</li>
+<code class="language-plaintext highlighter-rouge">goto</code> 2. until some condition (e.g. the model is good)</li>
 </ol>
 
 <p>Initialize</p>
 
-<p>Start with random. How would random compare against the <code class="highlighter-rouge">mean()</code> though?</p>
+<p>Start with random. How would random compare against the <code class="language-plaintext highlighter-rouge">mean()</code> though?</p>
 
 <p>Loss</p>
 
@@ -219,9 +219,9 @@ window.onload = wrap_img;
 <ul>
   <li>Gradients are a (continuous? since you must take at least the first derivative) function (used the quadratic y=x**2) with a local minimum (since there’s a stopping point where y’==0?). It’s also symmetric around an axis.</li>
   <li>A random value on the line is chosen (some x) as the initial value</li>
-  <li>pytorch provides the <code class="highlighter-rouge">backward()</code> function to compute the gradient of a layer (array) of a network. This is the <em>backward pass</em> through the network. The <em>forward pass</em> is where the activation function is calculated.</li>
+  <li>pytorch provides the <code class="language-plaintext highlighter-rouge">backward()</code> function to compute the gradient of a layer (array) of a network. This is the <em>backward pass</em> through the network. The <em>forward pass</em> is where the activation function is calculated.</li>
   <li>This is all handled through object-oriented “magic” in pytorch.</li>
-  <li>stepping is done by altering the weights by your learning rate (<code class="highlighter-rouge">lr</code>) * the gradient of your weights. Recall that <code class="highlighter-rouge">1e-5</code> is a common rate.</li>
+  <li>stepping is done by altering the weights by your learning rate (<code class="language-plaintext highlighter-rouge">lr</code>) * the gradient of your weights. Recall that <code class="language-plaintext highlighter-rouge">1e-5</code> is a common rate.</li>
   <li>Takeaway: the gradient is a search for a local minimum. Step size through this search is the learning rate. This is done by backpropagating the affect of a function to a tensor’s gradient. In this sense, “all the points” in our array are somewhere on this line and we wish to find a tensor such that the sum of the gradients is closest to zero. Think I said that correctly.</li>
 </ul>
 
