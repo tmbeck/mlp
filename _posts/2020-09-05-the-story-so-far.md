@@ -5,7 +5,7 @@ title: "The story so far"
 author: "<a href='https://www.linkedin.com/in/tmbeck'>Tim Beck</a>"
 toc: true
 comments: false
-categories: [linux, education, fastai]
+categories: [education, fastai]
 badges: true
 layout: post
 ---
