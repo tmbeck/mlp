@@ -95,7 +95,7 @@ window.onload = wrap_img;
 
 <p>Based on the experience creating a model that can identify teddies (fastai course v3), then cats vs. dogs (course v4), this is plausible but we will need to build a dataset.</p>
 
-<p>Began by investigating solutions for scraping images off reddit.</p>
+<p>Began by investigating solutions for scraping images. Initially considered using reddit.</p>
 
 <ol>
   <li>Initial solution: use <a href="https://www.parsehub.com/">ParseHub</a> to scrape reddit and download images.
@@ -121,9 +121,32 @@ window.onload = wrap_img;
   <li>Better solution: use <a href="https://praw.readthedocs.io/en/latest/getting_started/quick_start.html">praw</a>, <a href="https://www.storybench.org/how-to-scrape-reddit-with-python/">tutorial here</a> and <a href="https://towardsdatascience.com/scraping-reddit-data-1c0af3040768">here on towardsdatascience</a>. Obtain API creds, write own scraping logic. Build into a notebook.</li>
 </ol>
 
+<h3 id="dataset-construction">Dataset Construction</h3>
+
+<ol>
+  <li><a href="jupyter/2020/09/06/fossil-dataset.html">Scrape images off of reddit</a></li>
+  <li><a href="/fossils/jupyter/2020/09/18/Fossils-Production.html">Bing image search</a></li>
+</ol>
+
 <h1 id="ideas-for-new-projects">Ideas for new projects</h1>
 
-<p><em>Coming soon</em></p>
+<h2 id="optical-character-recognition-ocr-of-historical-documents">Optical character recognition (OCR) of historical documents</h2>
+
+<p>There are a lot of documents (such as the image below) that are difficult to read. Can a model learn to read the image?</p>
+
+<p><img src="/images/olde_english_small.jpg" alt="Old English Document" title="Sample document candidate" /></p>
+
+<h3 id="research">Research</h3>
+
+<p>Looks like this is already being done to varying degrees:</p>
+
+<ul>
+  <li><a href="https://github.com/madmaze/pytesseract">pytessaract</a></li>
+  <li><a href="https://stackabuse.com/pytesseract-simple-python-optical-character-recognition/">An example of using tesseract</a></li>
+  <li><a href="https://nanonets.com/blog/ocr-with-tesseract/#trainingtesseractoncustomdata">NanoNets Tutorial OCR with tesseract</a></li>
+</ul>
+
+<p>Looks like we’d need to either cut the image up into single images (similar to the MNIST dataset) or use image segmentation. Looks like the OCR examples do some image segmentation, especially for some of the documents.</p>
 
   </div>
 

@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      9 min read
     
 </span></p>
 
@@ -113,6 +113,7 @@ window.onload = wrap_img;
 </li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#questionnaire">Questionnaire</a></li>
 </ul>
 </li>
 </ul><h1 id="lesson-3">
@@ -227,7 +228,173 @@ window.onload = wrap_img;
 
 <p>Application:</p>
 
-<p>Let’s apply the above to our MNIST imageset.</p>
+<p>Let’s apply the above to our MNIST imageset…</p>
+
+<h2 id="questionnaire">
+<a class="anchor" href="#questionnaire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Questionnaire</h2>
+
+<ol>
+  <li>
+    <p>What letters are often used to signify the independent and dependent variables?</p>
+
+    <p>x for the independent variable and y for the dependent variable, as in math, e.g. <code class="language-plaintext highlighter-rouge">y = f(x)</code>.</p>
+  </li>
+  <li>
+    <p>What’s the difference between the crop, pad, and squish resize approaches? When might you choose one over the others?</p>
+
+    <p>Crop trims image to size, pad adds zeros (black) to size, squish alters the aspect ratio to size. The choice depends on the data and the subject. It may be advantageous for the model to recognize half a bear, such as if trim is used.</p>
+  </li>
+  <li>
+    <p>What is data augmentation? Why is it needed?</p>
+
+    <p>Data augmentation provides a broader view of material to train on. It can be a way to diversify the training set the model is based on.</p>
+  </li>
+  <li>
+    <p>What is the difference between item_tfms and batch_tfms?</p>
+
+    <p><code class="language-plaintext highlighter-rouge">item_tfms</code> operates on each item in a batch while <code class="language-plaintext highlighter-rouge">batch_tfms</code> operates on each batch.</p>
+  </li>
+  <li>
+    <p>What is a confusion matrix?</p>
+
+    <p>A confusion matrix describes the predictions of the model, showing both where it is right vs. where it is wrong. It is shown as a table where x and y are your labels/categories and each cell is the number of images predicted vs. actually labeled.</p>
+  </li>
+  <li>
+    <p>What does export save?</p>
+
+    <p>Export saves the labels, weights, and biases of the model for use on another system, e.g. to deploy to production.</p>
+  </li>
+  <li>
+    <p>What is it called when we use a model for getting predictions, instead of training?</p>
+
+    <p>This is called inference.</p>
+  </li>
+  <li>
+    <p>What are IPython widgets?</p>
+
+    <p>Controls that couple python, javascript, and html into a functional GUI within a jupyter notebook.</p>
+  </li>
+  <li>
+    <p>When might you want to use CPU for deployment? When might GPU be better?</p>
+
+    <p>For inference (e.g. use in production), a CPU is likely sufficient, however for models deployed at scale, a GPU may be faster.</p>
+  </li>
+  <li>
+    <p>What are the downsides of deploying your app to a server, instead of to a client (or edge) device such as a phone or PC?</p>
+
+    <ol>
+      <li>It requires online access</li>
+      <li>It is limited by the latency and bandwidth available of the underlying network</li>
+      <li>It requires centralized resources (e.g. the server it runs on)</li>
+    </ol>
+  </li>
+  <li>
+    <p>What are three examples of problems that could occur when rolling out a bear warning system in practice?</p>
+
+    <ol>
+      <li>It could be fooled by costumes or may not recognize partial bear images</li>
+      <li>It might not know how to recognize all bears</li>
+      <li>If online, requires internet connectivity, if offline, it requires updates</li>
+    </ol>
+  </li>
+  <li>
+    <p>What is “out-of-domain data”?</p>
+
+    <p>Data shown to a model that is unlike anything it was trained on</p>
+  </li>
+  <li>
+    <p>What is “domain shift”?</p>
+
+    <p>Where the data our model is shown in production changes over time, diverging from what it was trained on. To resolve this, online training or simply retraining are used.</p>
+  </li>
+  <li>
+    <p>What are the three steps in the deployment process? <em>This is question 27 in Chapter 2 of fastbook</em></p>
+
+    <ol>
+      <li>Create (train) the model</li>
+      <li>Export the model</li>
+      <li>Deploy the model for inference</li>
+    </ol>
+  </li>
+  <li>
+    <p>How is a grayscale image represented on a computer? How about a color image?</p>
+
+    <p>Grayscale images are represented as an array of 8-bit values. Color images (at least RGB colorspaced) are represented as a tuple/vector of three 8-bit values. For example, the shape of a greyscale image that is 28 pixels by 28 pixels would be (28, 28) and a color image (28, 28, 3).</p>
+  </li>
+  <li>
+    <p>How are the files and folders in the MNIST_SAMPLE dataset structured? Why?</p>
+
+    <p>The data set has been pre-separated into a training set and a validation set. In each dataset, directories for each numeral contain images of that numeral.</p>
+  </li>
+  <li>
+    <p>Explain how the “pixel similarity” approach to classifying digits works.</p>
+
+    <p>The “pixel similarity” approach used an average of all images of a numeral to create a baseline to compare new numeral images against. This can be done, say, by subtracting the sample image from the average and then using the result to compute an error vector, such as by taking the L1 normal (abs() of the difference minus the mean()).</p>
+  </li>
+  <li>
+    <p>What is a list comprehension? Create one now that selects odd numbers from a list and doubles them.</p>
+
+    <p>List comprehension is a feature of the python language that returns a list from a some function. For example</p>
+
+    <p><code class="language-plaintext highlighter-rouge">doubles = [ (x*2) for x in range(1, 100, 2) ]</code></p>
+
+    <p>Returns a list containing the double of each odd number from 1 up to 100.</p>
+  </li>
+  <li>
+    <p>What is a “rank-3 tensor”?</p>
+
+    <p>A rank-3 tensor is a matrix. Recall that a rank-0 tensor is a scalar and a rank-1 tensor is a vector.</p>
+  </li>
+  <li>
+    <p>What is the difference between tensor rank and shape? How do you get the rank from the shape?</p>
+
+    <p>A tensor shape describes the length of a tensor in each of its dimensions. The rank describes the number of dimensions. The rank can be computed as:</p>
+
+    <p><code class="language-plaintext highlighter-rouge">rank = len(t.shape)</code></p>
+  </li>
+  <li>
+    <p>What are RMSE and L1 norm?</p>
+
+    <p>L1 norm is the mean absolute distance: abs(A-B) - mean(A-B)
+L2 norm is the root mean square average: (A-B)**2.mean().sqrt()</p>
+  </li>
+  <li>
+    <p>How can you apply a calculation on thousands of numbers at once, many thousands of times faster than a Python loop?</p>
+
+    <p>Using matrix math in numpy or tensors in pytorch.</p>
+  </li>
+  <li>
+    <p>Create a 3×3 tensor or array containing the numbers from 1 to 9. Double it. Select the bottom-right four numbers.</p>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">tensor</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">tensor</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span>  <span class="mi">12</span><span class="p">],</span>
+         <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">]])</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>What is broadcasting?</p>
+  </li>
+  <li>
+    <p>Are metrics generally calculated using the training set, or the validation set? Why?</p>
+  </li>
+  <li>
+    <p>What is SGD?</p>
+  </li>
+</ol>
+
+<p>Why does SGD use mini-batches?</p>
+
+<p>What are the seven steps in SGD for machine learning?</p>
+
+<p>How do we initialize the weights in a model?</p>
+
+<p>What is “loss”?</p>
+
+<p>Why can’t we always use a high learning rate?</p>
+
+<p>What is a “gradient”?</p>
 
   </div><a class="u-url" href="/education/fastai/2020/09/16/lesson-3.html" hidden></a>
 </article>
