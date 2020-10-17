@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      10 min read
     
 </span></p>
 
@@ -181,6 +181,8 @@ window.onload = wrap_img;
 <p>Much of this chapter covers an introduction to numpy and tensors. Vectors and matrices aren’t new to me, and even slicing n-dimensional arrays is familiar (I have previous experience in perl and C). But I was struggling with this in python, e.g. the difference between <code class="language-plaintext highlighter-rouge">[:,:]</code> and <code class="language-plaintext highlighter-rouge">[:][:]</code>. I found this article by Jay Alammar very helpful: <a href="http://jalammar.github.io/visual-numpy/">A visual intro to numpy and data representation</a> (thank you Jay!).</p>
 
 <p>Stochastic Gradient Descent (SGD)</p>
+
+<p><img src="/images/sgd.png" alt="SGD" title="Stochastic Gradient Descent"></p>
 
 <p>So far our primitive model is little more than a math function with no memory and no feedback. To do better we need to be able to train it and to make changes to a set of weights so as to alter the next outcome of the model.</p>
 
@@ -381,20 +383,46 @@ L2 norm is the root mean square average: (A-B)**2.mean().sqrt()</p>
   </li>
   <li>
     <p>What is SGD?</p>
+
+    <p>SGD is stochastic gradient descent.</p>
+  </li>
+  <li>
+    <p>Why does SGD use mini-batches?</p>
+
+    <p>We can more quickly compute new parameters with smaller steps. These smaller steps are mini-batches. They are less accurate than running the full batch, but faster. They are also more likely to be runnable on GPU accelerated systems, where memory is limited.</p>
+  </li>
+  <li>
+    <p>What are the seven steps in SGD for machine learning?</p>
+
+    <ol>
+      <li>init: Initialize our weights</li>
+      <li>predict: For a given weight, predict the next value</li>
+      <li>loss: Compute the loss from our prediction</li>
+      <li>gradient: Compute the gradient for how much our loss would change for a small change to a weight</li>
+      <li>step: Update our weight</li>
+      <li>repeat: return to predict to continue the process</li>
+      <li>stop: cease learning</li>
+    </ol>
+  </li>
+  <li>
+    <p>How do we initialize the weights in a model?</p>
+  </li>
+  <li>
+    <p>What is “loss”?</p>
+
+    <p>Loss is a computation of how good the model is doing by measuring predictions vs. actuals.</p>
+  </li>
+  <li>
+    <p>Why can’t we always use a high learning rate?</p>
+
+    <p>If the model learns too quickly it will pass or oscillate around the optimal weights. Also, if the learning rate is too high, we may overfit our model.</p>
+  </li>
+  <li>
+    <p>What is a “gradient”?</p>
+
+    <p>A gradient is a computation of how much our loss would change by making a small change to a weight.</p>
   </li>
 </ol>
-
-<p>Why does SGD use mini-batches?</p>
-
-<p>What are the seven steps in SGD for machine learning?</p>
-
-<p>How do we initialize the weights in a model?</p>
-
-<p>What is “loss”?</p>
-
-<p>Why can’t we always use a high learning rate?</p>
-
-<p>What is a “gradient”?</p>
 
   </div><a class="u-url" href="/education/fastai/2020/09/16/lesson-3.html" hidden></a>
 </article>
