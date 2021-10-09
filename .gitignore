@@ -5,6 +5,7 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
+*.xml
 vendor
 _notebooks/.ipynb_checkpoints
 # Local Netlify folder
@@ -12,3 +13,5 @@ _notebooks/.ipynb_checkpoints
 .tweet-cache
 __pycache__
 .DS_Store
+# fastpages generated content
+images/**
